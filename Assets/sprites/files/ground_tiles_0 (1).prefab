@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8480782713127913255}
   - component: {fileID: 8347973784122217813}
   - component: {fileID: 2845565208080186317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_tiles_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +135,6 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Size: {x: 0.64, y: 0.16}
   m_EdgeRadius: 0
