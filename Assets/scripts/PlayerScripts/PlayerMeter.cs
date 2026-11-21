@@ -1,8 +1,6 @@
 // Soul/Silk-style meter + transformation.
 // Gains on enemy hits (PlayerCombat.OnEnemyHit), lets player transform when full.
-// Transformation: no jump / no attacks / invulnerable; can roll A/D and super-launch with E.
-using System;
-using System.Collections;
+// Transformation lasts until E is pressed; eject restores the normal sprite and launches upward.
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -27,13 +25,9 @@ public class PlayerMeter : MonoBehaviour
     [Header("Transformation")]
     [Tooltip("Sprite shown while the player is transformed.")]
     [SerializeField] private Sprite transformedSprite;
-    [Tooltip("Total time the transformation lasts; meter drains linearly to zero over this duration.")]
-    [Min(0.1f)] [SerializeField] private float transformDuration = 5f;
-
-    [Header("Super Launch (E while transformed)")]
-    [Tooltip("Vertical distance the launch should carry the player — set ~2x your normal jump height.")]
-    [Min(0.1f)] [SerializeField] private float launchHeight = 10f;
-    [Min(0f)] [SerializeField] private float launchCooldown = 1.2f;
+    [Header("Eject (E while transformed)")]
+    [Tooltip("Vertical height in world units reached by the eject jump.")]
+    [Min(0.1f)] [SerializeField] private float ejectJumpHeight = 10f;
 
     [Header("Input Bindings")]
     [SerializeField] private string transformBinding = "<Keyboard>/q";
@@ -51,6 +45,13 @@ public class PlayerMeter : MonoBehaviour
     public float CurrentMeterNormalized => Mathf.Clamp01(currentMeter / maxMeter);
     public bool IsMeterFull => currentMeter >= maxMeter;
 
+    /// <summary>Connects a runtime-created HUD slider to this meter.</summary>
+    public void SetMeterSlider(Slider slider)
+    {
+        meterSlider = slider;
+        UpdateUI();
+    }
+
     // ------------------------------------------------------------------
     // Internals
     // ------------------------------------------------------------------
@@ -58,12 +59,10 @@ public class PlayerMeter : MonoBehaviour
     private PlayerCombat combat;
     private Sprite originalSprite;
     private float currentMeter;
-    private float launchCooldownTimer;
 
     private InputAction transformAction;
     private InputAction launchAction;
 
-    private Coroutine transformCoroutine;
 
     // ==================================================================
     // Unity messages
@@ -101,8 +100,6 @@ public class PlayerMeter : MonoBehaviour
 
     private void Update()
     {
-        if (launchCooldownTimer > 0f) launchCooldownTimer -= Time.deltaTime;
-
         if (!controller.IsTransformed)
         {
             if (IsMeterFull && transformAction.WasPressedThisFrame() && !controller.IsStunned)
@@ -110,8 +107,8 @@ public class PlayerMeter : MonoBehaviour
         }
         else
         {
-            if (launchAction.WasPressedThisFrame() && launchCooldownTimer <= 0f)
-                SuperLaunch();
+            if (launchAction.WasPressedThisFrame())
+                Eject();
         }
     }
 
@@ -141,48 +138,26 @@ public class PlayerMeter : MonoBehaviour
     // ==================================================================
     private void StartTransform()
     {
-        if (transformCoroutine != null) StopCoroutine(transformCoroutine);
-        transformCoroutine = StartCoroutine(TransformRoutine());
-    }
-
-    private IEnumerator TransformRoutine()
-    {
         // Cancel in-flight abilities cleanly on entering the form.
         controller.InterruptAbilities();
         controller.ClearSlow();
 
         controller.IsTransformed = true;
         if (transformedSprite != null) controller.SpriteRenderer.sprite = transformedSprite;
-        OnTransformStart?.Invoke();
-
-        float startMeter = currentMeter;
-        float elapsed = 0f;
-        while (elapsed < transformDuration)
-        {
-            elapsed += Time.deltaTime;
-            currentMeter = Mathf.Lerp(startMeter, 0f, elapsed / transformDuration);
-            UpdateUI();
-            yield return null;
-        }
-
         currentMeter = 0f;
-        controller.IsTransformed = false;
-        controller.SpriteRenderer.sprite = originalSprite;
         UpdateUI();
-        OnTransformEnd?.Invoke();
-        transformCoroutine = null;
+        OnTransformStart?.Invoke();
     }
 
-    // ==================================================================
-    // Super launch (E)
-    // ==================================================================
-    private void SuperLaunch()
+    private void Eject()
     {
-        launchCooldownTimer = launchCooldown;
+        // Restore the regular form before applying the dedicated launch velocity.
+        controller.IsTransformed = false;
+        controller.SpriteRenderer.sprite = originalSprite;
+        OnTransformEnd?.Invoke();
         Rigidbody2D rb = controller.Rigidbody;
-        // v = sqrt(2 * g * h), where g is the effective gravity acting on the body.
         float effectiveG = Mathf.Abs(Physics2D.gravity.y) * Mathf.Max(0.01f, controller.OriginalGravity);
-        float v = Mathf.Sqrt(2f * effectiveG * launchHeight);
+        float v = Mathf.Sqrt(2f * effectiveG * ejectJumpHeight);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, v);
     }
 }

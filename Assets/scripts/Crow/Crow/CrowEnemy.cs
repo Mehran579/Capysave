@@ -20,8 +20,8 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // ---------------------------------------------------------------
     // STATE MACHINE
     // ---------------------------------------------------------------
-    public enum CrowState { Idle, Alert, AttackDive, AttackShoot, Retreat, Stunned, Dead }
-    public enum AttackChoice { None, Dive, Shoot }
+    public enum CrowState { Idle, Alert, Pursue, AttackDive, AttackShoot, Stunned, Dead }
+    private enum AttackChoice { None, Swoop, Ricochet }
 
     // ---------------------------------------------------------------
     // HEALTH & DAMAGE
@@ -61,23 +61,20 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     private bool destroyOnDeath = true;
 
     // ---------------------------------------------------------------
-    // MOVEMENT — HOVER / BOB
+    // MOVEMENT — AIRBORNE IDLE
     // ---------------------------------------------------------------
-    [Header("Hover / Bob")]
-    [SerializeField, Min(0f), Tooltip("Max distance the crow drifts from its home point while idling.")]
-    private float hoverRadius = 2.5f;
+    [Header("Airborne Idle")]
+    [SerializeField, Min(0.1f), Tooltip("Maximum vertical drift above or below the crow's starting height while idling.")]
+    private float idleVerticalRange = 0.75f;
+
+    [SerializeField, Min(0f), Tooltip("How strongly idle flight steers back toward its bounded vertical band.")]
+    private float idleVerticalCorrection = 2f;
 
     [SerializeField, Min(0f), Tooltip("Vertical amplitude of the constant idle bob (world units).")]
     private float bobAmplitude = 0.15f;
 
     [SerializeField, Min(0f), Tooltip("Bob oscillations per second.")]
     private float bobFrequency = 1.6f;
-
-    [SerializeField, Min(0f), Tooltip("Soft pull applied when the crow drifts past the hover radius.")]
-    private float returnForce = 3f;
-
-    [SerializeField, Min(0f), Tooltip("Optional hard vertical limits around the home point (0 to disable).")]
-    private Vector2 verticalLimits = new Vector2(1.5f, 1.5f); // (down, up) extents
 
     // ---------------------------------------------------------------
     // MOVEMENT — HOP (the twitchy flap bursts)
@@ -89,23 +86,8 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     [SerializeField, Min(0f), Tooltip("Initial velocity of each flap hop.")]
     private float hopForce = 7f;
 
-    [SerializeField, Min(0.01f), Tooltip("Seconds the hop impulse lasts before velocity settles.")]
-    private float hopDuration = 0.18f;
-
     [SerializeField, Range(0f, 20f), Tooltip("Higher = faster ease-out after a hop (floaty glide to stop).")]
     private float hopEaseOut = 4.5f;
-
-    [SerializeField, Range(0f, 1f), Tooltip("How strongly hops bias back toward home when far away. 0 = pure random.")]
-    private float homeBias = 0.7f;
-
-    [SerializeField, Min(0.05f), Tooltip("Radius of the ground-cast ahead of the hop.")]
-    private float hopClearanceRadius = 0.25f;
-
-    [SerializeField, Min(0.1f), Tooltip("Distance the ground-cast probes along the hop direction.")]
-    private float hopClearanceDistance = 1.2f;
-
-    [SerializeField, Range(1, 16), Tooltip("Max random directions tried before a hop is cancelled.")]
-    private int hopDirectionAttempts = 6;
 
     // ---------------------------------------------------------------
     // DETECTION
@@ -118,7 +100,7 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     private bool requireLineOfSight = true;
 
     [SerializeField, Min(0f), Tooltip("Seconds without a sighting before the crow forgets the player.")]
-    private float losePlayerTime = 2.5f;
+    private float losePlayerTime = 4f;
 
     [SerializeField, Min(0f), Tooltip("Seconds of 'alert' reaction before the first attack.")]
     private float alertTime = 0.35f;
@@ -127,65 +109,54 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     private Color alertColor = new Color(1f, 0.85f, 0.3f);
 
     // ---------------------------------------------------------------
-    // ATTACK SELECTION
+    // ACTION CHOICE AND BETWEEN-ACTION IDLE
     // ---------------------------------------------------------------
-    [Header("Attack Selection")]
-    [SerializeField, Min(0f), Tooltip("Max distance at which a dive is considered.")]
-    private float diveMaxDistance = 5.0f;
+    [Header("Attack Choice and Idle Wait")]
+    [SerializeField, Min(0f), Tooltip("Minimum wait between attack rolls while the crow flaps in the air.")]
+    private float actionWaitMin = 0.25f;
+    [SerializeField, Min(0f), Tooltip("Maximum wait between attack rolls while the crow flaps in the air.")]
+    private float actionWaitMax = 1.5f;
+    [SerializeField, Range(0f, 1f), Tooltip("Chance to choose the ricochet projectile instead of a swoop.")]
+    private float ricochetChoiceChance = 0.35f;
+    [SerializeField, Min(1), Tooltip("Maximum consecutive times the crow can choose the same action.")]
+    private int maxRepeatedAction = 3;
 
-    [SerializeField, Min(0f), Tooltip("Min distance at which a shoot is considered.")]
-    private float shootMinDistance = 3.5f;
+    [SerializeField, Min(0f), Tooltip("Maximum distance the crow will pursue the player before giving up.")]
+    private float giveUpDistance = 10f;
+    [SerializeField, Min(0f), Tooltip("Maximum horizontal distance for one swoop attack.")]
+    private float swoopMaxDistance = 7f;
 
-    [SerializeField, Range(0f, 1f), Tooltip("Dive weight in the overlap zone where both attacks are legal.")]
-    private float diveChance = 0.55f;
-
-    [SerializeField, Range(0f, 1f), Tooltip("Shoot weight in the overlap zone where both attacks are legal.")]
-    private float shootChance = 0.45f;
-
-    [SerializeField, Min(1), Tooltip("Max times the same attack can be chosen in a row.")]
-    private int maxRepeatAttacks = 2;
-
-    [SerializeField, Min(0f), Tooltip("Seconds the crow waits after any attack before it can act again.")]
-    private float attackCooldown = 1.2f;
-
-    [SerializeField, Min(0f), Tooltip("Max distance from home the crow is allowed to stray while chasing/attacking.")]
-    private float leashRadius = 6f;
+    [Header("Airborne Pursuit")]
+    [SerializeField, Min(0f), Tooltip("Preferred horizontal spacing from the player while airborne.")]
+    private float preferredPlayerDistance = 3.5f;
+    [SerializeField, Min(0.1f), Tooltip("Speed used to flap into a swoop position.")]
+    private float pursuitSpeed = 4f;
+    [SerializeField, Min(0f), Tooltip("Amplitude of the short vertical flaps during pursuit.")]
+    private float pursuitFlapAmplitude = 0.3f;
+    [SerializeField, Min(0f), Tooltip("Frequency of the short vertical flaps during pursuit.")]
+    private float pursuitFlapFrequency = 5f;
+    [SerializeField, Min(0f), Tooltip("Maximum vertical difference at which the Craw commits to a level sweep.")]
+    private float verticalAlignment = 0.5f;
+    [SerializeField, Min(0f), Tooltip("Minimum time between completed swoop attacks.")]
+    private float swoopCooldown = 1.2f;
 
     // ---------------------------------------------------------------
     // ATTACK A — DIVE
     // ---------------------------------------------------------------
     [Header("Attack A — Dive")]
     [SerializeField, Min(0f), Tooltip("Telegraph windup seconds before the dive fires.")]
-    private float diveWindupTime = 0.55f;
-
-    [SerializeField, Min(0f), Tooltip("Seconds before dive-end that the crow locks the target position.")]
-    private float lockOnDelay = 0.12f;
+    private float diveWindupTime = 0.25f;
 
     [SerializeField, Tooltip("Tint flashed during the dive windup.")]
     private Color diveWindupColor = new Color(1f, 0.4f, 0.4f);
 
-    [SerializeField, Min(0.1f), Tooltip("Dive flight speed.")]
-    private float diveSpeed = 14f;
+    [SerializeField, Min(0.1f), Tooltip("Horizontal sweep speed.")]
+    private float diveSpeed = 5f;
 
     [SerializeField, Min(0f), Tooltip("Extra distance past the locked target before the dive ends.")]
     private float diveOvershoot = 1.5f;
 
-    [SerializeField, Range(0f, 1f), Tooltip("Curvature of the dive arc. 0 = straight line.")]
-    private float diveCurvature = 0.15f;
-
-    [SerializeField, Min(0.1f), Tooltip("Speed flying back toward home after a dive.")]
-    private float retreatSpeed = 6f;
-
-    [SerializeField, Min(0f), Tooltip("Seconds of vulnerable idle after retreat finishes.")]
-    private float diveRecoveryTime = 0.5f;
-
-    [SerializeField, Tooltip("Dive hitbox offset (local, flipped by facing).")]
-    private Vector2 diveHitboxOffset = new Vector2(0.35f, 0f);
-
-    [SerializeField, Tooltip("Dive hitbox size.")]
-    private Vector2 diveHitboxSize = new Vector2(0.9f, 0.9f);
-
-    [SerializeField, Min(0), Tooltip("Damage dealt by the dive contact hitbox.")]
+    [SerializeField, Min(0), Tooltip("Damage dealt when the crow collides with the player during a swoop.")]
     private int diveDamage = 1;
 
     [SerializeField, Min(0f), Tooltip("Knockback speed applied to the player on a dive hit.")]
@@ -262,20 +233,12 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // GIZMO COLORS
     // ---------------------------------------------------------------
     [Header("Gizmo Colors")]
-    [SerializeField] private Color gizmoHoverRadius     = new Color(0f,   1f,   1f,   0.9f);
-    [SerializeField] private Color gizmoHomePoint       = new Color(0.2f, 1f,   0.2f, 1f);
     [SerializeField] private Color gizmoDetection       = new Color(1f,   0.9f, 0.2f, 0.9f);
-    [SerializeField] private Color gizmoLeash           = new Color(1f,   0.2f, 1f,   0.7f);
     [SerializeField] private Color gizmoHop             = new Color(1f,   1f,   1f,   1f);
-    [SerializeField] private Color gizmoDiveRange       = new Color(1f,   0.3f, 0.3f, 0.7f);
-    [SerializeField] private Color gizmoShootRange      = new Color(0.4f, 0.7f, 1f,   0.7f);
     [SerializeField] private Color gizmoDiveTarget      = new Color(1f,   0f,   0f,   1f);
     [SerializeField] private Color gizmoDivePath        = new Color(1f,   0.4f, 0.4f, 1f);
-    [SerializeField] private Color gizmoDiveHitboxIdle  = new Color(1f,   0.5f, 0f,   0.35f);
-    [SerializeField] private Color gizmoDiveHitboxLive  = new Color(1f,   0.5f, 0f,   1f);
     [SerializeField] private Color gizmoProjectileSpawn = new Color(0.3f, 0.6f, 1f,   1f);
     [SerializeField] private Color gizmoAimLine         = new Color(1f,   0.6f, 0.6f, 1f);
-    [SerializeField] private Color gizmoVerticalLimits  = new Color(0.5f, 0.8f, 1f,   0.6f);
 
     // ---------------------------------------------------------------
     // CACHED / RUNTIME STATE
@@ -290,28 +253,34 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     private int facingDirection = 1;
     private Transform target;
     private float lastSeenTime = -999f;
-    private float nextAttackTime;
-
-    private Vector2 homePoint;
+    private float nextSwoopTime;
+    private AttackChoice lastChosenAction = AttackChoice.None;
+    private int repeatedActionCount;
+    private Coroutine waitActionCo;
+    // Crow tuning values are authored at scale 1. Keep their world-space behavior
+    // proportional when the scene instance is resized (for example to 0.4).
+    private float BehaviorScale => Mathf.Max(Mathf.Abs(transform.lossyScale.x), Mathf.Abs(transform.lossyScale.y));
+    private float Scaled(float value) => value * BehaviorScale;
+    private Vector2 Scaled(Vector2 value) => Vector2.Scale(value, new Vector2(Mathf.Abs(transform.lossyScale.x), Mathf.Abs(transform.lossyScale.y)));
     private Vector2 externalVelocity;   // decaying velocity from hops
     private Vector2 lastHopDir;
     private float   bobPhase;
-
-    private AttackChoice lastAttack = AttackChoice.None;
-    private int repeatCount;
-
-    private bool diveHitboxActive;
+    private bool swoopCollisionActive;
     private Vector2 lockedDiveTarget;
+    private Vector2 swoopCommitTarget;
     private Vector2 divePathStart;
     private Vector2 divePathEnd;
     private bool diveHitPlayerThisDive;
 
     private Color baseColor = Color.white;
-    private Coroutine idleHopLoopCo;
     private Coroutine alertCo;
     private Coroutine diveCo;
     private Coroutine shootCo;
-    private Coroutine retreatCo;
+    private Coroutine pursuitCo;
+    private Vector2 idleVelocity;
+    private float idleHopTimer;
+    private float idleCenterY;
+    private int committedSwoopDirection = 1;
     private Coroutine staggerCo;
     private Coroutine deathCo;
     private Coroutine tintCo;
@@ -329,13 +298,14 @@ public class CrowEnemy : MonoBehaviour, IDamageable
 
         rb.gravityScale = 0f;
         rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.useFullKinematicContacts = true;
         rb.freezeRotation = true;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         currentHealth = maxHealth;
-        homePoint = transform.position;
-        nextAttackTime = Time.time + Random.Range(0f, 0.3f);
+        idleCenterY = rb.position.y;
+        idleHopTimer = Random.Range(hopIntervalRange.x, hopIntervalRange.y);
         bobPhase = Random.value * Mathf.PI * 2f;
     }
 
@@ -348,16 +318,19 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     private void Update()
     {
         if (state == CrowState.Dead) return;
-
         DetectPlayer();
 
-        if (target != null && Time.time - lastSeenTime > losePlayerTime)
+        if (target != null && Vector2.Distance(transform.position, target.position) > giveUpDistance)
+        {
             target = null;
+            if (state == CrowState.Idle || state == CrowState.Alert || state == CrowState.Pursue)
+                ChangeState(CrowState.Idle);
+        }
 
         UpdateFacing();
 
-        if (state == CrowState.Idle && target != null && Time.time >= nextAttackTime)
-            ChangeState(CrowState.Alert);
+        if (state == CrowState.Idle && target != null && waitActionCo == null)
+            waitActionCo = StartCoroutine(ChooseNextActionAfterWait());
     }
 
     private void FixedUpdate()
@@ -368,77 +341,58 @@ public class CrowEnemy : MonoBehaviour, IDamageable
         switch (state)
         {
             case CrowState.Idle:
-            case CrowState.Alert:
-            case CrowState.AttackShoot:
-                TickHoverPhysics();
+                TickIdleFlight();
                 break;
-            // AttackDive / Retreat drive rb.velocity directly inside their coroutines.
+            // Active states drive movement directly inside their coroutines.
         }
     }
 
     // ===============================================================
     // HOVER / BOB / HOP PHYSICS
     // ===============================================================
-    private void TickHoverPhysics()
+    private void TickIdleFlight()
     {
-        externalVelocity = Vector2.Lerp(externalVelocity, Vector2.zero, Mathf.Clamp01(hopEaseOut * Time.fixedDeltaTime));
+        float bobVy = StepFlapVelocity();
+        float upperY = idleCenterY + Scaled(idleVerticalRange);
+        float lowerY = idleCenterY - Scaled(idleVerticalRange);
+        float y = rb.position.y;
+        float verticalCorrection = 0f;
+        if (y > upperY)
+            verticalCorrection = -Mathf.Min(Scaled(pursuitSpeed), (y - upperY) * Scaled(idleVerticalCorrection));
+        else if (y < lowerY)
+            verticalCorrection = Mathf.Min(Scaled(pursuitSpeed), (lowerY - y) * Scaled(idleVerticalCorrection));
+        idleHopTimer -= Time.fixedDeltaTime;
+        if (idleHopTimer <= 0f)
+        {
+            idleHopTimer = Random.Range(hopIntervalRange.x, hopIntervalRange.y);
+            float side = Random.Range(-1f, 1f);
+            float forwardBias = target != null && Mathf.Abs(target.position.x - transform.position.x) > Scaled(1.5f)
+                ? Mathf.Sign(target.position.x - transform.position.x) * 0.35f
+                : 0f;
+            idleVelocity = new Vector2(side + forwardBias, Random.Range(-0.35f, 0.35f)).normalized * Scaled(hopForce) * 0.2f;
+        }
 
+        idleVelocity = Vector2.Lerp(idleVelocity, Vector2.zero, hopEaseOut * Time.fixedDeltaTime);
+        rb.linearVelocity = new Vector2(idleVelocity.x, idleVelocity.y + bobVy + verticalCorrection);
+    }
+
+    private float StepFlapVelocity()
+    {
         bobPhase += bobFrequency * Time.fixedDeltaTime * Mathf.PI * 2f;
-        float bobVy = Mathf.Cos(bobPhase) * bobAmplitude * bobFrequency * Mathf.PI * 2f;
-
-        Vector2 pos = rb.position;
-        Vector2 toHome = homePoint - pos;
-        float distFromHome = toHome.magnitude;
-        Vector2 homePull = Vector2.zero;
-        if (distFromHome > hoverRadius)
-            homePull = toHome.normalized * returnForce * Mathf.Min(distFromHome - hoverRadius, 2f);
-
-        // optional hard vertical clamp around home
-        float dy = pos.y - homePoint.y;
-        if (verticalLimits.x > 0f && dy < -verticalLimits.x) homePull.y += (-verticalLimits.x - dy) * returnForce;
-        if (verticalLimits.y > 0f && dy >  verticalLimits.y) homePull.y -= (dy - verticalLimits.y) * returnForce;
-
-        rb.linearVelocity = externalVelocity + homePull + new Vector2(0f, bobVy);
+        return Mathf.Cos(bobPhase) * Scaled(bobAmplitude) * bobFrequency * Mathf.PI * 2f;
     }
 
-    private IEnumerator IdleHopLoop()
+    private IEnumerator FlappyPause(float duration)
     {
-        while (state == CrowState.Idle || state == CrowState.Alert)
+        float elapsed = 0f;
+        while (elapsed < duration)
         {
-            float wait = Random.Range(hopIntervalRange.x, hopIntervalRange.y);
-            yield return new WaitForSeconds(wait);
-            if (state != CrowState.Idle && state != CrowState.Alert) yield break;
-            DoHop();
+            float bobVy = StepFlapVelocity();
+            float horizontalFlutter = Mathf.Sin(Time.time * bobFrequency * Mathf.PI * 2f) * Scaled(0.12f);
+            rb.linearVelocity = new Vector2(horizontalFlutter, bobVy);
+            yield return new WaitForFixedUpdate();
+            elapsed += Time.fixedDeltaTime;
         }
-    }
-
-    private void DoHop()
-    {
-        Vector2 dir = PickHopDirection();
-        if (dir == Vector2.zero) return;
-        lastHopDir = dir;
-        externalVelocity = dir * hopForce;
-        // animator.SetTrigger("Hop");
-    }
-
-    private Vector2 PickHopDirection()
-    {
-        Vector2 pos = rb.position;
-        Vector2 toHome = homePoint - pos;
-        float distFromHome = toHome.magnitude;
-        float bias = (distFromHome > hoverRadius) ? Mathf.Clamp01(distFromHome / Mathf.Max(hoverRadius, 0.01f)) * homeBias : 0f;
-        Vector2 homeDir = (distFromHome > 0.001f) ? toHome / distFromHome : Vector2.zero;
-
-        for (int i = 0; i < hopDirectionAttempts; i++)
-        {
-            float a = Random.Range(0f, Mathf.PI * 2f);
-            Vector2 random = new Vector2(Mathf.Cos(a), Mathf.Sin(a));
-            Vector2 dir = ((1f - bias) * random + bias * homeDir).normalized;
-
-            RaycastHit2D hit = Physics2D.CircleCast(pos, hopClearanceRadius, dir, hopClearanceDistance, groundLayer);
-            if (hit.collider == null) return dir;
-        }
-        return Vector2.zero;
     }
 
     // ===============================================================
@@ -446,26 +400,46 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // ===============================================================
     private void DetectPlayer()
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, detectionRange, playerLayer);
-        if (hit == null) return;
-
-        if (requireLineOfSight)
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRange, playerLayer);
+        Collider2D hit = null;
+        PlayerHealth hitHealth = null;
+        float nearestSqrDistance = float.PositiveInfinity;
+        foreach (Collider2D candidate in hits)
         {
-            Vector2 from = transform.position;
-            Vector2 to = hit.bounds.center;
-            Vector2 delta = to - from;
-            RaycastHit2D los = Physics2D.Raycast(from, delta.normalized, delta.magnitude, groundLayer);
-            if (los.collider != null) return;
+            if (candidate == null) continue;
+            Vector2 delta = (Vector2)candidate.bounds.center - (Vector2)transform.position;
+            float sqrDistance = delta.sqrMagnitude;
+            if (sqrDistance >= nearestSqrDistance) continue;
+
+            if (requireLineOfSight)
+            {
+                RaycastHit2D los = Physics2D.Raycast(transform.position, delta.normalized, delta.magnitude, groundLayer);
+                if (los.collider != null) continue;
+            }
+
+            hit = candidate;
+            hitHealth = candidate.GetComponentInParent<PlayerHealth>();
+            nearestSqrDistance = sqrDistance;
+        }
+        if (hit == null)
+        {
+            if (target != null && Time.time - lastSeenTime > losePlayerTime)
+                target = null;
+            return;
         }
 
-        target = hit.transform;
+        target = hitHealth != null ? hitHealth.transform : hit.transform;
         lastSeenTime = Time.time;
     }
 
     private void UpdateFacing()
     {
         int wanted = facingDirection;
-        if (faceTowardsPlayer && target != null)
+        if (state == CrowState.AttackDive)
+        {
+            wanted = committedSwoopDirection;
+        }
+        else if (faceTowardsPlayer && target != null)
         {
             wanted = (target.position.x >= transform.position.x) ? 1 : -1;
         }
@@ -490,28 +464,34 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     {
         if (state == next) return;
         if (state == CrowState.Dead) return;
-
         // stop coroutines belonging to outgoing state
-        StopIfRunning(ref idleHopLoopCo);
         StopIfRunning(ref alertCo);
         StopIfRunning(ref diveCo);
         StopIfRunning(ref shootCo);
-        StopIfRunning(ref retreatCo);
+        StopIfRunning(ref pursuitCo);
+        StopIfRunning(ref waitActionCo);
 
-        diveHitboxActive = false;
+        swoopCollisionActive = false;
 
         state = next;
-
+        if (next == CrowState.Idle)
+        {
+            idleVelocity = Vector2.zero;
+            idleHopTimer = Random.Range(hopIntervalRange.x, hopIntervalRange.y);
+            rb.linearVelocity = Vector2.zero;
+        }
         switch (next)
         {
             case CrowState.Idle:
                 // animator.SetBool("IsHovering", true); animator.SetBool("IsAlert", false);
-                idleHopLoopCo = StartCoroutine(IdleHopLoop());
                 break;
             case CrowState.Alert:
                 // animator.SetBool("IsAlert", true);
                 alertCo = StartCoroutine(AlertRoutine());
-                idleHopLoopCo = StartCoroutine(IdleHopLoop());
+                rb.linearVelocity = Vector2.zero;
+                break;
+            case CrowState.Pursue:
+                pursuitCo = StartCoroutine(PursuitRoutine());
                 break;
             case CrowState.AttackDive:
                 // animator.SetTrigger("DiveWindup");
@@ -521,10 +501,6 @@ public class CrowEnemy : MonoBehaviour, IDamageable
                 // animator.SetTrigger("ShootWindup");
                 shootCo = StartCoroutine(ShootRoutine());
                 break;
-            case CrowState.Retreat:
-                // animator.SetTrigger("Retreat");
-                retreatCo = StartCoroutine(RetreatRoutine());
-                break;
             case CrowState.Stunned:
                 // animator.SetBool("IsStunned", true);
                 break;
@@ -532,6 +508,9 @@ public class CrowEnemy : MonoBehaviour, IDamageable
                 // animator.SetTrigger("Death");
                 break;
         }
+
+        if (next == CrowState.Idle && target != null && waitActionCo == null)
+            waitActionCo = StartCoroutine(ChooseNextActionAfterWait());
     }
 
     private void StopIfRunning(ref Coroutine c)
@@ -555,44 +534,110 @@ public class CrowEnemy : MonoBehaviour, IDamageable
             yield break;
         }
 
-        AttackChoice choice = ChooseAttack(Vector2.Distance(transform.position, target.position));
-        ChangeState(choice == AttackChoice.Dive ? CrowState.AttackDive : CrowState.AttackShoot);
+        if (Vector2.Distance(transform.position, target.position) > giveUpDistance)
+        {
+            target = null;
+            ChangeState(CrowState.Idle);
+            yield break;
+        }
+
+        ChangeState(CrowState.Idle);
     }
 
-    private AttackChoice ChooseAttack(float distance)
+    private IEnumerator ChooseNextActionAfterWait()
     {
-        AttackChoice choice;
-        bool canDive  = distance <= diveMaxDistance;
-        bool canShoot = distance >= shootMinDistance;
-
-        if (canDive && !canShoot)      choice = AttackChoice.Dive;
-        else if (canShoot && !canDive) choice = AttackChoice.Shoot;
-        else if (canDive && canShoot)
+        if (target == null) yield break;
+        float minWait = Mathf.Min(actionWaitMin, actionWaitMax);
+        float maxWait = Mathf.Max(actionWaitMin, actionWaitMax);
+        float wait = Random.Range(minWait, maxWait);
+        float elapsed = 0f;
+        while (elapsed < wait && state == CrowState.Idle && target != null)
         {
-            float total = Mathf.Max(0.0001f, diveChance + shootChance);
-            choice = (Random.value < diveChance / total) ? AttackChoice.Dive : AttackChoice.Shoot;
+            yield return null;
+            elapsed += Time.deltaTime;
         }
+        if (state != CrowState.Idle || target == null) yield break;
+        AttackChoice choice = ChooseNextAction();
+        if (choice == AttackChoice.Ricochet)
+            ChangeState(CrowState.AttackShoot);
         else
         {
-            // target outside both windows — default to the closer behaviour
-            choice = (distance < (diveMaxDistance + shootMinDistance) * 0.5f) ? AttackChoice.Dive : AttackChoice.Shoot;
+            Debug.Log($"{name}: swoop selected; pursuing player before horizontal sweep.", this);
+            ChangeState(CrowState.Pursue);
         }
+    }
 
-        if (choice == lastAttack)
-        {
-            repeatCount++;
-            if (repeatCount > maxRepeatAttacks)
-            {
-                choice = (choice == AttackChoice.Dive) ? AttackChoice.Shoot : AttackChoice.Dive;
-                repeatCount = 1;
-            }
-        }
+    private AttackChoice ChooseNextAction()
+    {
+        AttackChoice choice = projectilePrefab != null
+            && Random.value < ricochetChoiceChance
+                ? AttackChoice.Ricochet
+                : AttackChoice.Swoop;
+
+        if (choice == lastChosenAction)
+            repeatedActionCount++;
         else
         {
-            repeatCount = 1;
+            lastChosenAction = choice;
+            repeatedActionCount = 1;
         }
-        lastAttack = choice;
+
+        if (repeatedActionCount > Mathf.Max(1, maxRepeatedAction))
+        {
+            choice = choice == AttackChoice.Ricochet ? AttackChoice.Swoop : AttackChoice.Ricochet;
+            if (choice == AttackChoice.Ricochet && projectilePrefab == null)
+                choice = AttackChoice.Swoop;
+            lastChosenAction = choice;
+            repeatedActionCount = 1;
+        }
         return choice;
+    }
+
+    private IEnumerator PursuitRoutine()
+    {
+        while (state == CrowState.Pursue && target != null)
+        {
+            Vector2 player = target.position;
+            float side = Mathf.Sign(rb.position.x - player.x);
+            if (side == 0f) side = facingDirection == 0 ? 1f : -facingDirection;
+
+            // Stay at the preferred distance on the side the Craw already occupies,
+            // with a continuous short-arc flap around the player's height.
+            Vector2 pursuitPosition = new Vector2(
+                player.x + side * preferredPlayerDistance,
+                player.y + Mathf.Sin(Time.time * pursuitFlapFrequency) * pursuitFlapAmplitude);
+            Vector2 nextPosition = Vector2.MoveTowards(
+                rb.position,
+                pursuitPosition,
+                pursuitSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(nextPosition);
+
+            float horizontalDistance = Mathf.Abs(rb.position.x - player.x);
+            bool verticallyAligned = Mathf.Abs(rb.position.y - player.y) <= verticalAlignment;
+            bool atAttackDistance = horizontalDistance <= preferredPlayerDistance + 0.5f;
+
+            if (verticallyAligned && atAttackDistance && Time.time >= nextSwoopTime)
+            {
+                swoopCommitTarget = player;
+                committedSwoopDirection = player.x == rb.position.x
+                    ? facingDirection
+                    : (player.x > rb.position.x ? 1 : -1);
+                Debug.Log($"{name}: performing committed horizontal swoop toward {swoopCommitTarget}.", this);
+                ChangeState(CrowState.AttackDive);
+                yield break;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        if (state != CrowState.Pursue) yield break;
+        if (target == null)
+        {
+            target = null;
+            ChangeState(CrowState.Idle);
+            yield break;
+        }
+
     }
 
     // ===============================================================
@@ -600,94 +645,47 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // ===============================================================
     private IEnumerator DiveRoutine()
     {
-        // windup
-        StartTint(diveWindupColor, diveWindupTime);
-        rb.linearVelocity = Vector2.zero;
-        externalVelocity = Vector2.zero;
-
-        float preLock = Mathf.Max(0f, diveWindupTime - lockOnDelay);
-        if (preLock > 0f) yield return new WaitForSeconds(preLock);
-        if (state != CrowState.AttackDive) yield break;
-
-        // tiny pull-back before lock
-        if (target != null)
-        {
-            Vector2 awayDir = ((Vector2)transform.position - (Vector2)target.position).normalized;
-            externalVelocity = awayDir * hopForce * 0.5f;
-        }
-
-        if (lockOnDelay > 0f) yield return new WaitForSeconds(lockOnDelay);
-        if (state != CrowState.AttackDive) yield break;
-
         if (target == null)
         {
             ChangeState(CrowState.Idle);
             yield break;
         }
 
-        // lock target + clamp inside leash
-        Vector2 start = transform.position;
-        Vector2 locked = target.position;
-        Vector2 fromHome = locked - homePoint;
-        if (fromHome.magnitude > leashRadius)
-            locked = homePoint + fromHome.normalized * leashRadius;
+        Vector2 locked = swoopCommitTarget;
+        StartTint(diveWindupColor, diveWindupTime);
+        externalVelocity = Vector2.zero;
+        yield return StartCoroutine(FlappyPause(diveWindupTime));
+        if (state != CrowState.AttackDive) yield break;
 
-        Vector2 diveDir = (locked - start).normalized;
-        if (diveDir.sqrMagnitude < 0.001f) diveDir = Vector2.right * facingDirection;
-        Vector2 end = locked + diveDir * diveOvershoot;
+        // Sweep through the committed target's horizontal lane. Its position is
+        // never sampled again during windup or flight.
+        Vector2 start = transform.position;
+        float direction = committedSwoopDirection;
+        Vector2 diveDir = Vector2.right * direction;
+        Vector2 end = new Vector2(locked.x + direction * diveOvershoot, start.y);
 
         lockedDiveTarget = locked;
         divePathStart = start;
         divePathEnd = end;
         diveHitPlayerThisDive = false;
-        diveHitboxActive = true;
+        swoopCollisionActive = true;
         // animator.SetTrigger("DiveActive");
 
-        float totalDist = Vector2.Distance(start, end);
-        float travelTime = totalDist / Mathf.Max(0.01f, diveSpeed);
-        Vector2 perp = new Vector2(-diveDir.y, diveDir.x);
-        float t = 0f;
-        Vector2 prev = start;
-
-        while (t < travelTime)
+        while (Vector2.Distance(rb.position, end) > 0.05f)
         {
-            if (state != CrowState.AttackDive) { diveHitboxActive = false; yield break; }
-            t += Time.fixedDeltaTime;
-            float u = Mathf.Clamp01(t / travelTime);
-            float arc = Mathf.Sin(u * Mathf.PI) * diveCurvature * totalDist;
-            Vector2 straight = Vector2.Lerp(start, end, u);
-            Vector2 pos = straight + perp * arc;
-
-            rb.linearVelocity = (pos - prev) / Time.fixedDeltaTime;
-            prev = pos;
-
-            // dive hitbox vs player (once per dive)
-            if (!diveHitPlayerThisDive)
-            {
-                Vector2 hbWorld = (Vector2)transform.position
-                    + new Vector2(diveHitboxOffset.x * facingDirection, diveHitboxOffset.y);
-                Collider2D pHit = Physics2D.OverlapBox(hbWorld, diveHitboxSize, 0f, playerLayer);
-                if (pHit != null)
-                {
-                    IDamageable dmg = pHit.GetComponentInParent<IDamageable>();
-                    if (dmg != null)
-                    {
-                        Vector2 knockDir = diveDir;
-                        dmg.TakeDamage(diveDamage, knockDir * diveKnockback);
-                        diveHitPlayerThisDive = true;
-                    }
-                }
-            }
+            if (state != CrowState.AttackDive) { swoopCollisionActive = false; yield break; }
+            Vector2 nextPosition = Vector2.MoveTowards(rb.position, end, diveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(nextPosition);
 
             // wall abort
             Collider2D wall = Physics2D.OverlapBox(transform.position, bodyCollider.bounds.size * 0.95f, 0f, groundLayer);
             if (wall != null)
             {
-                diveHitboxActive = false;
+                swoopCollisionActive = false;
                 if (bounceOffWallOnDive)
                 {
                     externalVelocity = -diveDir * diveBounceForce;
-                    ChangeState(CrowState.Retreat);
+                    ChangeState(CrowState.Idle);
                 }
                 else
                 {
@@ -700,9 +698,10 @@ public class CrowEnemy : MonoBehaviour, IDamageable
             yield return new WaitForFixedUpdate();
         }
 
-        diveHitboxActive = false;
+        swoopCollisionActive = false;
         rb.linearVelocity = Vector2.zero;
-        ChangeState(CrowState.Retreat);
+        nextSwoopTime = Time.time + swoopCooldown;
+        ChangeState(CrowState.Idle);
     }
 
     private IEnumerator WallStunRoutine()
@@ -718,34 +717,11 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // ===============================================================
     // RETREAT
     // ===============================================================
-    private IEnumerator RetreatRoutine()
-    {
-        float safety = 3f; // max retreat time
-        float t = 0f;
-        while (t < safety)
-        {
-            if (state != CrowState.Retreat) yield break;
-            t += Time.fixedDeltaTime;
-            Vector2 toHome = homePoint - rb.position;
-            if (toHome.magnitude < 0.25f) break;
-            rb.linearVelocity = toHome.normalized * retreatSpeed;
-            yield return new WaitForFixedUpdate();
-        }
-        rb.linearVelocity = Vector2.zero;
-
-        // vulnerable window
-        yield return new WaitForSeconds(diveRecoveryTime);
-
-        nextAttackTime = Time.time + attackCooldown;
-        ChangeState(CrowState.Idle);
-    }
-
     // ===============================================================
     // SHOOT
     // ===============================================================
     private IEnumerator ShootRoutine()
     {
-        rb.linearVelocity = Vector2.zero;
         externalVelocity = Vector2.zero;
 
         if (target != null)
@@ -758,14 +734,13 @@ public class CrowEnemy : MonoBehaviour, IDamageable
 
         StartTint(shootWindupColor, shootWindupTime);
         // animator.SetTrigger("ShootWindup");
-        yield return new WaitForSeconds(shootWindupTime);
+        yield return StartCoroutine(FlappyPause(shootWindupTime));
         if (state != CrowState.AttackShoot) yield break;
 
         FireProjectiles();
         // animator.SetTrigger("Shoot");
 
-        yield return new WaitForSeconds(shootRecoveryTime);
-        nextAttackTime = Time.time + attackCooldown;
+        yield return StartCoroutine(FlappyPause(shootRecoveryTime));
         ChangeState(CrowState.Idle);
     }
 
@@ -773,8 +748,9 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     {
         if (projectilePrefab == null || target == null) return;
 
+        Vector2 scaledSpawnOffset = Scaled(projectileSpawnOffset);
         Vector2 spawn = (Vector2)transform.position
-            + new Vector2(projectileSpawnOffset.x * facingDirection, projectileSpawnOffset.y);
+            + new Vector2(scaledSpawnOffset.x * facingDirection, scaledSpawnOffset.y);
 
         Vector2 aim = ((Vector2)target.position - spawn).normalized;
         if (aim.sqrMagnitude < 0.001f) aim = Vector2.right * facingDirection;
@@ -787,7 +763,7 @@ public class CrowEnemy : MonoBehaviour, IDamageable
                 offset = -spreadAngle * 0.5f + spreadAngle * (i / (float)(n - 1));
 
             Vector2 dir = Rotate(aim, offset);
-            CrowProjectile.Spawn(projectilePrefab, spawn, dir * projectileSpeed);
+            CrowProjectile.Spawn(projectilePrefab, spawn, dir * Scaled(projectileSpeed));
         }
     }
 
@@ -803,15 +779,34 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // ===============================================================
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (state == CrowState.Dead || contactDamage <= 0) return;
+        if (state == CrowState.Dead) return;
         if (!collision.gameObject.CompareTag("Player")) return;
 
         PlayerHealth player = collision.gameObject.GetComponentInParent<PlayerHealth>();
         if (player == null || player.IsInvulnerable) return;
 
+        bool swoopHit = state == CrowState.AttackDive && swoopCollisionActive;
+        if (swoopHit && diveHitPlayerThisDive) return;
+
+        int damage = swoopHit ? diveDamage : contactDamage;
+        if (damage <= 0) return;
+
         Vector2 away = (Vector2)player.transform.position - (Vector2)transform.position;
         if (away.sqrMagnitude < 0.001f) away = Vector2.down;
-        player.TakeDamage(contactDamage, away.normalized + Vector2.up * 0.25f);
+        Vector2 hitDirection = swoopHit
+            ? new Vector2(facingDirection, 0.25f).normalized * diveKnockback
+            : away.normalized + Vector2.up * 0.25f;
+
+        if (swoopHit)
+        {
+            diveHitPlayerThisDive = true;
+            Debug.Log($"{name}: swoop collision hit Player; PlayerHealth will apply damage and i-frames.", this);
+        }
+        else
+        {
+            Debug.Log($"{name}: contact collision hit Player; PlayerHealth will apply damage and i-frames.", this);
+        }
+        player.TakeDamage(damage, hitDirection);
     }
 
     public void TakeDamage(int amount, Vector2 hitDirection)
@@ -860,8 +855,7 @@ public class CrowEnemy : MonoBehaviour, IDamageable
         StopIfRunning(ref alertCo);
         StopIfRunning(ref diveCo);
         StopIfRunning(ref shootCo);
-        StopIfRunning(ref retreatCo);
-        diveHitboxActive = false;
+        swoopCollisionActive = false;
 
         state = CrowState.Stunned;
         // animator.SetBool("IsStunned", true);
@@ -893,16 +887,14 @@ public class CrowEnemy : MonoBehaviour, IDamageable
 
     private IEnumerator DeathRoutine()
     {
-        StopIfRunning(ref idleHopLoopCo);
         StopIfRunning(ref alertCo);
         StopIfRunning(ref diveCo);
         StopIfRunning(ref shootCo);
-        StopIfRunning(ref retreatCo);
         StopIfRunning(ref staggerCo);
         StopIfRunning(ref tintCo);
 
         state = CrowState.Dead;
-        diveHitboxActive = false;
+        swoopCollisionActive = false;
         // animator.SetTrigger("Death");
 
         if (bodyCollider != null) bodyCollider.enabled = false;
@@ -969,56 +961,25 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     // ===============================================================
     // GIZMOS
     // ===============================================================
-    private Vector2 GizmoHome => Application.isPlaying ? homePoint : (Vector2)transform.position;
-
     private void OnDrawGizmos()
     {
-        Vector3 home = GizmoHome;
-
-        // home point
-        Gizmos.color = gizmoHomePoint;
-        Gizmos.DrawWireSphere(home, 0.12f);
-        Gizmos.DrawLine(home + Vector3.left  * 0.2f, home + Vector3.right * 0.2f);
-        Gizmos.DrawLine(home + Vector3.down  * 0.2f, home + Vector3.up    * 0.2f);
-
-        // hover radius
-        Gizmos.color = gizmoHoverRadius;
-        Gizmos.DrawWireSphere(home, hoverRadius);
-
-        // vertical limits
-        if (verticalLimits.x > 0f || verticalLimits.y > 0f)
-        {
-            Gizmos.color = gizmoVerticalLimits;
-            float w = Mathf.Max(hoverRadius, 0.5f);
-            if (verticalLimits.x > 0f) Gizmos.DrawLine(home + new Vector3(-w, -verticalLimits.x, 0f), home + new Vector3(w, -verticalLimits.x, 0f));
-            if (verticalLimits.y > 0f) Gizmos.DrawLine(home + new Vector3(-w,  verticalLimits.y, 0f), home + new Vector3(w,  verticalLimits.y, 0f));
-        }
-
-        // leash
-        Gizmos.color = gizmoLeash;
-        Gizmos.DrawWireSphere(home, leashRadius);
-
         // detection
         Gizmos.color = gizmoDetection;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
-
-        // dive hitbox (idle color)
-        int face = Application.isPlaying ? facingDirection : 1;
-        Vector3 hbWorld = transform.position + new Vector3(diveHitboxOffset.x * face, diveHitboxOffset.y, 0f);
-        Gizmos.color = diveHitboxActive ? gizmoDiveHitboxLive : gizmoDiveHitboxIdle;
-        Gizmos.DrawWireCube(hbWorld, diveHitboxSize);
+        Gizmos.DrawWireSphere(transform.position, Scaled(detectionRange));
 
         // projectile spawn + edit-mode dive preview
-        Vector3 spawn = transform.position + new Vector3(projectileSpawnOffset.x * face, projectileSpawnOffset.y, 0f);
+        int face = Application.isPlaying ? facingDirection : 1;
+        Vector2 scaledSpawnOffset = Scaled(projectileSpawnOffset);
+        Vector3 spawn = transform.position + new Vector3(scaledSpawnOffset.x * face, scaledSpawnOffset.y, 0f);
         Gizmos.color = gizmoProjectileSpawn;
-        Gizmos.DrawWireSphere(spawn, 0.08f);
+        Gizmos.DrawWireSphere(spawn, Scaled(0.08f));
 
         if (!Application.isPlaying)
         {
             // dive preview toward where the body is facing
             Vector3 d = Vector3.right * face;
             Gizmos.color = gizmoDivePath;
-            Gizmos.DrawLine(transform.position, transform.position + d * (diveMaxDistance + diveOvershoot));
+            Gizmos.DrawLine(transform.position, transform.position + d * (Scaled(swoopMaxDistance) + Scaled(diveOvershoot)));
         }
 
         // runtime extras
@@ -1027,14 +988,14 @@ public class CrowEnemy : MonoBehaviour, IDamageable
             if (lastHopDir.sqrMagnitude > 0.001f)
             {
                 Gizmos.color = gizmoHop;
-                Gizmos.DrawLine(transform.position, (Vector2)transform.position + lastHopDir * 0.6f);
+                Gizmos.DrawLine(transform.position, (Vector2)transform.position + lastHopDir * Scaled(0.6f));
             }
             if (state == CrowState.AttackDive)
             {
                 Gizmos.color = gizmoDivePath;
                 Gizmos.DrawLine(divePathStart, divePathEnd);
                 Gizmos.color = gizmoDiveTarget;
-                Gizmos.DrawWireSphere(lockedDiveTarget, 0.15f);
+                Gizmos.DrawWireSphere(lockedDiveTarget, Scaled(0.15f));
             }
             if (target != null)
             {
@@ -1046,13 +1007,11 @@ public class CrowEnemy : MonoBehaviour, IDamageable
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 home = GizmoHome;
-
-        // highlight attack-range rings (selected-only so the scene isn't noisy)
-        Gizmos.color = gizmoDiveRange;
-        Gizmos.DrawWireSphere(transform.position, diveMaxDistance);
-        Gizmos.color = gizmoShootRange;
-        Gizmos.DrawWireSphere(transform.position, shootMinDistance);
+        // Show the detection range and horizontal swoop reach.
+        Gizmos.color = gizmoDetection;
+        Gizmos.DrawWireSphere(transform.position, Scaled(giveUpDistance));
+        Gizmos.color = gizmoDivePath;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.right * facingDirection * Scaled(swoopMaxDistance));
     }
 
     // ===============================================================
@@ -1067,7 +1026,6 @@ public class CrowEnemy : MonoBehaviour, IDamageable
     //   Hop             : fired each flap-hop burst
     //   DiveWindup      : start of the dive telegraph
     //   DiveActive      : the swoop itself
-    //   Retreat         : flap back to home after a dive
     //   ShootWindup     : start of the shoot telegraph
     //   Shoot           : projectile release
     //   Hurt            : fired on every damage event
