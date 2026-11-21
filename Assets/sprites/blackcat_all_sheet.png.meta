@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: 4fdea57bb6ccea04b8a9e07317d355d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8645373302588386873
+    second: blackcat_all_sheet_0
+  - first:
+      213: -4346766162978294869
+    second: blackcat_all_sheet_1
+  - first:
+      213: -2380710545385374014
+    second: blackcat_all_sheet_2
+  - first:
+      213: -901658237753729431
+    second: blackcat_all_sheet_3
+  - first:
+      213: 1901870733684031400
+    second: blackcat_all_sheet_4
+  - first:
+      213: -6335699090204072781
+    second: blackcat_all_sheet_5
+  - first:
+      213: -4075755197794718068
+    second: blackcat_all_sheet_6
+  - first:
+      213: 7343941867704354402
+    second: blackcat_all_sheet_7
+  - first:
+      213: 7489803218476136577
+    second: blackcat_all_sheet_8
+  - first:
+      213: 3821263131901613562
+    second: blackcat_all_sheet_9
+  - first:
+      213: 2097506871530989585
+    second: blackcat_all_sheet_10
+  - first:
+      213: 7563524704905394254
+    second: blackcat_all_sheet_11
+  - first:
+      213: -1534101694621989855
+    second: blackcat_all_sheet_12
+  - first:
+      213: -5753766869024623652
+    second: blackcat_all_sheet_13
+  - first:
+      213: 6338160571230206669
+    second: blackcat_all_sheet_14
+  - first:
+      213: -5412117314542699027
+    second: blackcat_all_sheet_15
+  - first:
+      213: 7491606984819011611
+    second: blackcat_all_sheet_16
+  - first:
+      213: 2905762695355313355
+    second: blackcat_all_sheet_17
+  - first:
+      213: 3713854807905372544
+    second: blackcat_all_sheet_18
+  - first:
+      213: -4551430489145318126
+    second: blackcat_all_sheet_19
+  - first:
+      213: 587796558257011733
+    second: blackcat_all_sheet_20
+  - first:
+      213: -7634710932030895579
+    second: blackcat_all_sheet_21
+  - first:
+      213: -7639291117809090922
+    second: blackcat_all_sheet_22
+  - first:
+      213: -2181629053524307378
+    second: blackcat_all_sheet_23
+  - first:
+      213: 6305640679790632285
+    second: blackcat_all_sheet_24
+  - first:
+      213: 3042647199821485042
+    second: blackcat_all_sheet_25
+  - first:
+      213: -691960438167948112
+    second: blackcat_all_sheet_26
+  - first:
+      213: -6365011563577674210
+    second: blackcat_all_sheet_27
+  - first:
+      213: -6350915203480977038
+    second: blackcat_all_sheet_28
+  - first:
+      213: -6645816517370012897
+    second: blackcat_all_sheet_29
+  - first:
+      213: 5036938111357583327
+    second: blackcat_all_sheet_30
+  - first:
+      213: 3729436904949743823
+    second: blackcat_all_sheet_31
+  - first:
+      213: 4386838449258185150
+    second: blackcat_all_sheet_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blackcat_all_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 635
+        width: 151
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1d29459c6750880800000000000000
+      internalID: -8645373302588386873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 637
+        width: 151
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3bdf5743f2da3c0800000000000000
+      internalID: -4346766162978294869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 637
+        width: 153
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce374d5f5406fed0800000000000000
+      internalID: -2380710545385374014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 638
+        width: 159
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e52e52c9aac73f0800000000000000
+      internalID: -901658237753729431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 635
+        width: 163
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8afb2f11b5dc46a10800000000000000
+      internalID: 1901870733684031400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 636
+        width: 164
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4ee94de331318a0800000000000000
+      internalID: -6335699090204072781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 637
+        width: 161
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e6efbed320077c0800000000000000
+      internalID: -4075755197794718068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 638
+        width: 156
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26603a3083ceae560800000000000000
+      internalID: 7343941867704354402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 421
+        width: 199
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188f8d2385021f760800000000000000
+      internalID: 7489803218476136577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 433
+        width: 205
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5da42929ad70530800000000000000
+      internalID: 3821263131901613562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 460
+        width: 177
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 118ab87f267db1d10800000000000000
+      internalID: 2097506871530989585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 480
+        width: 140
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48f6c555a907f860800000000000000
+      internalID: 7563524704905394254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 470
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1244bb203a6c5bae0800000000000000
+      internalID: -1534101694621989855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 446
+        width: 153
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3306374838620b0800000000000000
+      internalID: -5753766869024623652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 424
+        width: 184
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca3091657ba5f750800000000000000
+      internalID: 6338160571230206669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 424
+        width: 165
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dedf0ff1afb44e4b0800000000000000
+      internalID: -5412117314542699027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 452
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10f8f64cd887f760800000000000000
+      internalID: 7491606984819011611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 213
+        width: 185
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc2c3aa6c7535820800000000000000
+      internalID: 2905762695355313355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 213
+        width: 205
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089839c55434a8330800000000000000
+      internalID: 3713854807905372544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 223
+        width: 215
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2156c9aa51216d0c0800000000000000
+      internalID: -4551430489145318126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 258
+        width: 221
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c3b1ffad5482800800000000000000
+      internalID: 587796558257011733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 252
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ac1859bde0c0690800000000000000
+      internalID: -7634710932030895579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 217
+        width: 155
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e313bf339cbf590800000000000000
+      internalID: -7639291117809090922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 214
+        width: 156
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4213014feb49b1e0800000000000000
+      internalID: -2181629053524307378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 225
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d5c202ac2228750800000000000000
+      internalID: 6305640679790632285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 221
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f35232f187a93a20800000000000000
+      internalID: 3042647199821485042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 217
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4306cc5a9a566f0800000000000000
+      internalID: -691960438167948112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 3
+        width: 159
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16f2b9c4bfeaa7a0800000000000000
+      internalID: -6365011563577674210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2
+        width: 153
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27183e165440dd7a0800000000000000
+      internalID: -6350915203480977038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 3
+        width: 143
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b9cb7a61155c3a0800000000000000
+      internalID: -6645816517370012897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 2
+        width: 209
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdf7813868cc6e540800000000000000
+      internalID: 5036938111357583327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 2
+        width: 188
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc003cb0b1f91c330800000000000000
+      internalID: 3729436904949743823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackcat_all_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 3
+        width: 174
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb14f0fb35e21ec30800000000000000
+      internalID: 4386838449258185150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      blackcat_all_sheet_0: -8645373302588386873
+      blackcat_all_sheet_1: -4346766162978294869
+      blackcat_all_sheet_10: 2097506871530989585
+      blackcat_all_sheet_11: 7563524704905394254
+      blackcat_all_sheet_12: -1534101694621989855
+      blackcat_all_sheet_13: -5753766869024623652
+      blackcat_all_sheet_14: 6338160571230206669
+      blackcat_all_sheet_15: -5412117314542699027
+      blackcat_all_sheet_16: 7491606984819011611
+      blackcat_all_sheet_17: 2905762695355313355
+      blackcat_all_sheet_18: 3713854807905372544
+      blackcat_all_sheet_19: -4551430489145318126
+      blackcat_all_sheet_2: -2380710545385374014
+      blackcat_all_sheet_20: 587796558257011733
+      blackcat_all_sheet_21: -7634710932030895579
+      blackcat_all_sheet_22: -7639291117809090922
+      blackcat_all_sheet_23: -2181629053524307378
+      blackcat_all_sheet_24: 6305640679790632285
+      blackcat_all_sheet_25: 3042647199821485042
+      blackcat_all_sheet_26: -691960438167948112
+      blackcat_all_sheet_27: -6365011563577674210
+      blackcat_all_sheet_28: -6350915203480977038
+      blackcat_all_sheet_29: -6645816517370012897
+      blackcat_all_sheet_3: -901658237753729431
+      blackcat_all_sheet_30: 5036938111357583327
+      blackcat_all_sheet_31: 3729436904949743823
+      blackcat_all_sheet_32: 4386838449258185150
+      blackcat_all_sheet_4: 1901870733684031400
+      blackcat_all_sheet_5: -6335699090204072781
+      blackcat_all_sheet_6: -4075755197794718068
+      blackcat_all_sheet_7: 7343941867704354402
+      blackcat_all_sheet_8: 7489803218476136577
+      blackcat_all_sheet_9: 3821263131901613562
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

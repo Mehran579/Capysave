@@ -149,6 +149,7 @@ public class PlayerMeter : MonoBehaviour
     {
         // Cancel in-flight abilities cleanly on entering the form.
         controller.InterruptAbilities();
+        controller.ClearSlow();
 
         controller.IsTransformed = true;
         if (transformedSprite != null) controller.SpriteRenderer.sprite = transformedSprite;

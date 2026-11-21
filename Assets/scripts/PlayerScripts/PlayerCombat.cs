@@ -44,6 +44,8 @@ public class PlayerCombat : MonoBehaviour
     [Min(0f)] [SerializeField] private float pogoForce = 16f;
 
     [Header("Eagle Purge — K")]
+    [Tooltip("Ground/platform layers used to find the slam's ground-relative rise target.")]
+    [SerializeField] private LayerMask groundLayer;
     [Tooltip("Vertical distance the player rises before the slam.")]
     [Min(0f)] [SerializeField] private float purgeRiseHeight = 4f;
     [Min(0.05f)] [SerializeField] private float purgeRiseDuration = 0.22f;
@@ -248,16 +250,34 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator EaglePurgeRoutine()
     {
         controller.IsSlamming = true;
+        controller.SetSlamEnemyPassThrough(true);
         purgeCooldownTimer = purgeCooldown;
 
         Rigidbody2D rb = controller.Rigidbody;
+        Collider2D playerCollider = GetComponent<Collider2D>();
         float savedGravity = rb.gravityScale;
         rb.gravityScale = 0f;
 
-        // Phase 1 — rise.
-        float riseSpeed = purgeRiseHeight / purgeRiseDuration;
-        rb.linearVelocity = new Vector2(0f, riseSpeed);
-        yield return new WaitForSeconds(purgeRiseDuration);
+        // Rise to a fixed height above the ground under the player. This keeps
+        // activating the slam in midair from adding another full rise to the jump.
+        RaycastHit2D groundHit = Physics2D.Raycast(
+            playerCollider.bounds.center,
+            Vector2.down,
+            Mathf.Infinity,
+            groundLayer);
+        float targetRiseY = groundHit.collider != null
+            ? groundHit.point.y + purgeRiseHeight + (transform.position.y - playerCollider.bounds.min.y)
+            : transform.position.y;
+        float riseDistance = Mathf.Max(0f, targetRiseY - transform.position.y);
+        float riseDuration = purgeRiseHeight > 0f && riseDistance > 0.01f
+            ? Mathf.Max(0.02f, purgeRiseDuration * (riseDistance / purgeRiseHeight))
+            : 0f;
+
+        if (riseDuration > 0f)
+        {
+            rb.linearVelocity = new Vector2(0f, riseDistance / riseDuration);
+            yield return new WaitForSeconds(riseDuration);
+        }
         rb.linearVelocity = Vector2.zero;
 
         // Phase 2 — hang at apex.
@@ -322,6 +342,7 @@ public class PlayerCombat : MonoBehaviour
         }
 
         controller.IsSlamming = false;
+        controller.SetSlamEnemyPassThrough(false);
         purgeCoroutine = null;
     }
 
@@ -356,6 +377,7 @@ public class PlayerCombat : MonoBehaviour
             controller.IsSlamming = false;
             controller.Rigidbody.gravityScale = controller.OriginalGravity;
         }
+        controller.SetSlamEnemyPassThrough(false);
     }
 
     // ==================================================================

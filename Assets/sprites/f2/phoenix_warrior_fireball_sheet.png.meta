@@ -1,0 +1,1014 @@
+fileFormatVersion: 2
+guid: 0bd970ecd128b7c479edec4f1984b211
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3233395499171005694
+    second: phoenix_warrior_fireball_sheet_0
+  - first:
+      213: 7081578471855886999
+    second: phoenix_warrior_fireball_sheet_1
+  - first:
+      213: -5320180301490896549
+    second: phoenix_warrior_fireball_sheet_2
+  - first:
+      213: 5620464533416936966
+    second: phoenix_warrior_fireball_sheet_3
+  - first:
+      213: 6001139778153752871
+    second: phoenix_warrior_fireball_sheet_4
+  - first:
+      213: 3267447641949375699
+    second: phoenix_warrior_fireball_sheet_5
+  - first:
+      213: -4588452870204345407
+    second: phoenix_warrior_fireball_sheet_6
+  - first:
+      213: 8574837372283155394
+    second: phoenix_warrior_fireball_sheet_7
+  - first:
+      213: 3395146868022301011
+    second: phoenix_warrior_fireball_sheet_8
+  - first:
+      213: 996350151512651394
+    second: phoenix_warrior_fireball_sheet_9
+  - first:
+      213: 5462967586832477032
+    second: phoenix_warrior_fireball_sheet_10
+  - first:
+      213: -1983950937103030576
+    second: phoenix_warrior_fireball_sheet_11
+  - first:
+      213: -1117401994089754817
+    second: phoenix_warrior_fireball_sheet_12
+  - first:
+      213: -819998113733192632
+    second: phoenix_warrior_fireball_sheet_13
+  - first:
+      213: 4281532263957696792
+    second: phoenix_warrior_fireball_sheet_14
+  - first:
+      213: 1440514140538392451
+    second: phoenix_warrior_fireball_sheet_15
+  - first:
+      213: -9202370325111452520
+    second: phoenix_warrior_fireball_sheet_16
+  - first:
+      213: -5259827978840623857
+    second: phoenix_warrior_fireball_sheet_17
+  - first:
+      213: 5629192333204978717
+    second: phoenix_warrior_fireball_sheet_18
+  - first:
+      213: 2646785877629953945
+    second: phoenix_warrior_fireball_sheet_19
+  - first:
+      213: 8504220220707650881
+    second: phoenix_warrior_fireball_sheet_20
+  - first:
+      213: 4696609214187869332
+    second: phoenix_warrior_fireball_sheet_21
+  - first:
+      213: 439325088884071861
+    second: phoenix_warrior_fireball_sheet_22
+  - first:
+      213: 5043971402822539777
+    second: phoenix_warrior_fireball_sheet_23
+  - first:
+      213: 6718521605316285207
+    second: phoenix_warrior_fireball_sheet_24
+  - first:
+      213: 9134638652031965403
+    second: phoenix_warrior_fireball_sheet_25
+  - first:
+      213: -4481532171164187621
+    second: phoenix_warrior_fireball_sheet_26
+  - first:
+      213: 8427582941833417797
+    second: phoenix_warrior_fireball_sheet_27
+  - first:
+      213: 9111388866026333349
+    second: phoenix_warrior_fireball_sheet_28
+  - first:
+      213: 4134643423775682258
+    second: phoenix_warrior_fireball_sheet_29
+  - first:
+      213: -5070577942746243946
+    second: phoenix_warrior_fireball_sheet_30
+  - first:
+      213: -1745545030692237392
+    second: phoenix_warrior_fireball_sheet_31
+  - first:
+      213: 3204963088939546209
+    second: phoenix_warrior_fireball_sheet_32
+  - first:
+      213: 8017685748503167492
+    second: phoenix_warrior_fireball_sheet_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 105
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef44f6243145fdc20800000000000000
+      internalID: 3233395499171005694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 123
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7921600b912d64260800000000000000
+      internalID: 7081578471855886999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 116
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51ca9c043cea26b0800000000000000
+      internalID: -5320180301490896549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 107
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6068ff2f6b6effd40800000000000000
+      internalID: 5620464533416936966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 0
+        width: 124
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729225435d4584350800000000000000
+      internalID: 6001139778153752871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 116
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc8494915e485d20800000000000000
+      internalID: 3267447641949375699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 110
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c339dadc6a8250c0800000000000000
+      internalID: -4588452870204345407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 0
+        width: 127
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c37ead9821fff670800000000000000
+      internalID: 8574837372283155394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 117
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351dfb4961cfd1f20800000000000000
+      internalID: 3395146868022301011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 113
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28671d41f2fb3dd00800000000000000
+      internalID: 996350151512651394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 127
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b6f90831c50db40800000000000000
+      internalID: 5462967586832477032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 119
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6ab2652279774e0800000000000000
+      internalID: -1983950937103030576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 107
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f87fe7ec03e70f0800000000000000
+      internalID: -1117401994089754817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 144
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84451726f08ce94f0800000000000000
+      internalID: -819998113733192632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 106
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8119297d8ee0b6b30800000000000000
+      internalID: 4281532263957696792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 0
+        width: 149
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38fc7b88afbbdf310800000000000000
+      internalID: 1440514140538392451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 105
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89cc22012fc9a4080800000000000000
+      internalID: -9202370325111452520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 0
+        width: 143
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f053b8d22565107b0800000000000000
+      internalID: -5259827978840623857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 104
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1cf8013a98ee1e40800000000000000
+      internalID: 5629192333204978717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 0
+        width: 124
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99767a08bb54bb420800000000000000
+      internalID: 2646785877629953945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 116
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d39f2cb3f050670800000000000000
+      internalID: 8504220220707650881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 80
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4949e745235bd2140800000000000000
+      internalID: 4696609214187869332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 80
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd1ad737dbc81600800000000000000
+      internalID: 439325088884071861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 80
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a577a4449cff540800000000000000
+      internalID: 5043971402822539777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 82
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7131aa4cdcbfc3d50800000000000000
+      internalID: 6718521605316285207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 79
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd81be5e471c4ce70800000000000000
+      internalID: 9134638652031965403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 79
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1406480c366ec1c0800000000000000
+      internalID: -4481532171164187621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 80
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5445f1bc80ac4f470800000000000000
+      internalID: 8427582941833417797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 45
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4e2f146e7227e70800000000000000
+      internalID: 9111388866026333349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 47
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2deed03a944316930800000000000000
+      internalID: 4134643423775682258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 47
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69cdda4e930b1a9b0800000000000000
+      internalID: -5070577942746243946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 46
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf042afa0496c7e0800000000000000
+      internalID: -1745545030692237392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 45
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166fa72e2f05a7c20800000000000000
+      internalID: 3204963088939546209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_fireball_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 44
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4024e3075ba844f60800000000000000
+      internalID: 8017685748503167492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      phoenix_warrior_fireball_sheet_0: 3233395499171005694
+      phoenix_warrior_fireball_sheet_1: 7081578471855886999
+      phoenix_warrior_fireball_sheet_10: 5462967586832477032
+      phoenix_warrior_fireball_sheet_11: -1983950937103030576
+      phoenix_warrior_fireball_sheet_12: -1117401994089754817
+      phoenix_warrior_fireball_sheet_13: -819998113733192632
+      phoenix_warrior_fireball_sheet_14: 4281532263957696792
+      phoenix_warrior_fireball_sheet_15: 1440514140538392451
+      phoenix_warrior_fireball_sheet_16: -9202370325111452520
+      phoenix_warrior_fireball_sheet_17: -5259827978840623857
+      phoenix_warrior_fireball_sheet_18: 5629192333204978717
+      phoenix_warrior_fireball_sheet_19: 2646785877629953945
+      phoenix_warrior_fireball_sheet_2: -5320180301490896549
+      phoenix_warrior_fireball_sheet_20: 8504220220707650881
+      phoenix_warrior_fireball_sheet_21: 4696609214187869332
+      phoenix_warrior_fireball_sheet_22: 439325088884071861
+      phoenix_warrior_fireball_sheet_23: 5043971402822539777
+      phoenix_warrior_fireball_sheet_24: 6718521605316285207
+      phoenix_warrior_fireball_sheet_25: 9134638652031965403
+      phoenix_warrior_fireball_sheet_26: -4481532171164187621
+      phoenix_warrior_fireball_sheet_27: 8427582941833417797
+      phoenix_warrior_fireball_sheet_28: 9111388866026333349
+      phoenix_warrior_fireball_sheet_29: 4134643423775682258
+      phoenix_warrior_fireball_sheet_3: 5620464533416936966
+      phoenix_warrior_fireball_sheet_30: -5070577942746243946
+      phoenix_warrior_fireball_sheet_31: -1745545030692237392
+      phoenix_warrior_fireball_sheet_32: 3204963088939546209
+      phoenix_warrior_fireball_sheet_33: 8017685748503167492
+      phoenix_warrior_fireball_sheet_4: 6001139778153752871
+      phoenix_warrior_fireball_sheet_5: 3267447641949375699
+      phoenix_warrior_fireball_sheet_6: -4588452870204345407
+      phoenix_warrior_fireball_sheet_7: 8574837372283155394
+      phoenix_warrior_fireball_sheet_8: 3395146868022301011
+      phoenix_warrior_fireball_sheet_9: 996350151512651394
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

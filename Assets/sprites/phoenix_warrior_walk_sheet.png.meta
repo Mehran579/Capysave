@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 58c8483262cc75b439a0e36e7040b2a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4400585837941051778
+    second: phoenix_warrior_walk_sheet_0
+  - first:
+      213: 3297793495346416703
+    second: phoenix_warrior_walk_sheet_1
+  - first:
+      213: -3344329998523542188
+    second: phoenix_warrior_walk_sheet_2
+  - first:
+      213: 2620750701288634177
+    second: phoenix_warrior_walk_sheet_3
+  - first:
+      213: -1937481951957786455
+    second: phoenix_warrior_walk_sheet_4
+  - first:
+      213: 4570905287730440795
+    second: phoenix_warrior_walk_sheet_5
+  - first:
+      213: -8439650272312288876
+    second: phoenix_warrior_walk_sheet_6
+  - first:
+      213: -9042736394026883960
+    second: phoenix_warrior_walk_sheet_7
+  - first:
+      213: 7770968764746684421
+    second: phoenix_warrior_walk_sheet_8
+  - first:
+      213: 5030569915880667116
+    second: phoenix_warrior_walk_sheet_9
+  - first:
+      213: -3943522239478763777
+    second: phoenix_warrior_walk_sheet_10
+  - first:
+      213: -2445295519951135320
+    second: phoenix_warrior_walk_sheet_11
+  - first:
+      213: -7991270453383366749
+    second: phoenix_warrior_walk_sheet_12
+  - first:
+      213: -2915690017189276101
+    second: phoenix_warrior_walk_sheet_13
+  - first:
+      213: 2404711643741348485
+    second: phoenix_warrior_walk_sheet_14
+  - first:
+      213: -7343662989544309025
+    second: phoenix_warrior_walk_sheet_15
+  - first:
+      213: -3105799654635657741
+    second: phoenix_warrior_walk_sheet_16
+  - first:
+      213: -3553717473190385578
+    second: phoenix_warrior_walk_sheet_17
+  - first:
+      213: -8554997019720493241
+    second: phoenix_warrior_walk_sheet_18
+  - first:
+      213: 6808252172064739543
+    second: phoenix_warrior_walk_sheet_19
+  - first:
+      213: 7112765596821856266
+    second: phoenix_warrior_walk_sheet_20
+  - first:
+      213: -2088179146798729638
+    second: phoenix_warrior_walk_sheet_21
+  - first:
+      213: 2512699381085231060
+    second: phoenix_warrior_walk_sheet_22
+  - first:
+      213: 459738068560846243
+    second: phoenix_warrior_walk_sheet_23
+  - first:
+      213: 8396637431204464564
+    second: phoenix_warrior_walk_sheet_24
+  - first:
+      213: -4627548111392032129
+    second: phoenix_warrior_walk_sheet_25
+  - first:
+      213: -2688048316939210839
+    second: phoenix_warrior_walk_sheet_26
+  - first:
+      213: 7578728506253169890
+    second: phoenix_warrior_walk_sheet_27
+  - first:
+      213: 368684134535695036
+    second: phoenix_warrior_walk_sheet_28
+  - first:
+      213: 3531557140803375453
+    second: phoenix_warrior_walk_sheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 106
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281571a1185021d30800000000000000
+      internalID: 4400585837941051778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 122
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c87b826bd14cd20800000000000000
+      internalID: 3297793495346416703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455525ad59d8691d0800000000000000
+      internalID: -3344329998523542188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 153
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1473a23a0e6ce5420800000000000000
+      internalID: 2620750701288634177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 132
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a063de0e6eac15e0800000000000000
+      internalID: -1937481951957786455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 115
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5aa029342e1f6f30800000000000000
+      internalID: 4570905287730440795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 106
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4991c42eac650ea80800000000000000
+      internalID: -8439650272312288876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 122
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884e78cf82fb18280800000000000000
+      internalID: -9042736394026883960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 118
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508d16f4be608db60800000000000000
+      internalID: 7770968764746684421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 114
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce775d57fac20d540800000000000000
+      internalID: 5030569915880667116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 0
+        width: 110
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffee308ba6bc549c0800000000000000
+      internalID: -3943522239478763777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 122
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad557a2ea0901ed0800000000000000
+      internalID: -2445295519951135320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 115
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7720abcdd491190800000000000000
+      internalID: -7991270453383366749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 0
+        width: 100
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36d74a90636987d0800000000000000
+      internalID: -2915690017189276101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 122
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582e270df704f5120800000000000000
+      internalID: 2404711643741348485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 114
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde370e5b61161a90800000000000000
+      internalID: -7343662989544309025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 0
+        width: 110
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f529e95babf5e4d0800000000000000
+      internalID: -3105799654635657741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 122
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658636a59c8aeaec0800000000000000
+      internalID: -3553717473190385578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 76
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747d801798b864980800000000000000
+      internalID: -8554997019720493241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 76
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d053316745cb7e50800000000000000
+      internalID: 6808252172064739543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 82
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00af2110ae95b260800000000000000
+      internalID: 7112765596821856266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 86
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56feaf212c4503e0800000000000000
+      internalID: -2088179146798729638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 86
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7dde436c6eed220800000000000000
+      internalID: 2512699381085231060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 85
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad1b4a6651516600800000000000000
+      internalID: 459738068560846243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 86
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7c0b2a149d68470800000000000000
+      internalID: 8396637431204464564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 46
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ab27fa285a7cfb0800000000000000
+      internalID: -4627548111392032129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 46
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af60c13c4222bad0800000000000000
+      internalID: -2688048316939210839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 54
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e4d8503c6d0d2960800000000000000
+      internalID: 7578728506253169890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 56
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba82595444dd1500800000000000000
+      internalID: 368684134535695036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix_warrior_walk_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 54
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d515491328c920130800000000000000
+      internalID: 3531557140803375453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      phoenix_warrior_walk_sheet_0: 4400585837941051778
+      phoenix_warrior_walk_sheet_1: 3297793495346416703
+      phoenix_warrior_walk_sheet_10: -3943522239478763777
+      phoenix_warrior_walk_sheet_11: -2445295519951135320
+      phoenix_warrior_walk_sheet_12: -7991270453383366749
+      phoenix_warrior_walk_sheet_13: -2915690017189276101
+      phoenix_warrior_walk_sheet_14: 2404711643741348485
+      phoenix_warrior_walk_sheet_15: -7343662989544309025
+      phoenix_warrior_walk_sheet_16: -3105799654635657741
+      phoenix_warrior_walk_sheet_17: -3553717473190385578
+      phoenix_warrior_walk_sheet_18: -8554997019720493241
+      phoenix_warrior_walk_sheet_19: 6808252172064739543
+      phoenix_warrior_walk_sheet_2: -3344329998523542188
+      phoenix_warrior_walk_sheet_20: 7112765596821856266
+      phoenix_warrior_walk_sheet_21: -2088179146798729638
+      phoenix_warrior_walk_sheet_22: 2512699381085231060
+      phoenix_warrior_walk_sheet_23: 459738068560846243
+      phoenix_warrior_walk_sheet_24: 8396637431204464564
+      phoenix_warrior_walk_sheet_25: -4627548111392032129
+      phoenix_warrior_walk_sheet_26: -2688048316939210839
+      phoenix_warrior_walk_sheet_27: 7578728506253169890
+      phoenix_warrior_walk_sheet_28: 368684134535695036
+      phoenix_warrior_walk_sheet_29: 3531557140803375453
+      phoenix_warrior_walk_sheet_3: 2620750701288634177
+      phoenix_warrior_walk_sheet_4: -1937481951957786455
+      phoenix_warrior_walk_sheet_5: 4570905287730440795
+      phoenix_warrior_walk_sheet_6: -8439650272312288876
+      phoenix_warrior_walk_sheet_7: -9042736394026883960
+      phoenix_warrior_walk_sheet_8: 7770968764746684421
+      phoenix_warrior_walk_sheet_9: 5030569915880667116
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

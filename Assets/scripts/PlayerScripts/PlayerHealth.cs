@@ -53,6 +53,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamage(int amount, Vector2 hitDirection)
     {
         if (IsInvulnerable) return;
+        if (controller.IsDashing || controller.IsSlamming) return;
         if (controller.IsTransformed) return; // transformed = invulnerable
         if (currentHealth <= 0) return;
 
@@ -67,6 +68,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
+            controller.ClearSlow();
             OnDied?.Invoke();
             return;
         }
@@ -80,22 +82,26 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private IEnumerator IFrameRoutine()
     {
         IsInvulnerable = true;
+        controller.SetInvulnerabilityEnemyPassThrough(true);
         controller.SetStunned(true);
-        yield return new WaitForSeconds(stunDuration);
-        controller.SetStunned(false);
-
-        float elapsed = stunDuration;
+        float elapsed = 0f;
         SpriteRenderer sr = controller.SpriteRenderer;
         Color baseColor = sr.color;
         while (elapsed < invulnerabilityDuration)
         {
-            // Simple alpha flash — swap to your own VFX later.
-            float a = Mathf.PingPong(elapsed * flashRate, 1f) * 0.8f + 0.2f;
-            sr.color = new Color(baseColor.r, baseColor.g, baseColor.b, a);
+            // Keep the player stunned only for the configured hit-stun window,
+            // while flashing white/transparent for the full invulnerability window.
+            controller.SetStunned(elapsed < stunDuration);
+            bool flashOn = Mathf.FloorToInt(elapsed * flashRate) % 2 == 0;
+            sr.color = flashOn
+                ? Color.white
+                : new Color(baseColor.r, baseColor.g, baseColor.b, 0.2f);
             elapsed += Time.deltaTime;
             yield return null;
         }
-        sr.color = new Color(baseColor.r, baseColor.g, baseColor.b, 1f);
+        controller.SetStunned(false);
+        controller.SetInvulnerabilityEnemyPassThrough(false);
+        sr.color = baseColor;
         IsInvulnerable = false;
         iFrameCoroutine = null;
     }

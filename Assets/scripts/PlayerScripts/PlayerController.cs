@@ -1,6 +1,7 @@
 // Requires: Unity Input System package (com.unity.inputsystem) installed and
 // Project Settings > Player > Active Input Handling = "Input System Package (New)" or "Both".
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -54,6 +55,12 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Horizontal roll speed while transformed.")]
     [Min(0f)] [SerializeField] private float transformedRollSpeed = 8f;
 
+    [Header("Slow (set by enemies — read-only here)")]
+    [Tooltip("Current speed multiplier (1 = normal). Only informational in the Inspector.")]
+    [Range(0f, 1f)] [SerializeField] private float currentSpeedMultiplier = 1f;
+    [Tooltip("Does the active slow also reduce jump force?")]
+    [SerializeField] private bool slowAffectsJump = false;
+
     [Header("Input Bindings")]
     [SerializeField] private string moveUpBinding = "<Keyboard>/w";
     [SerializeField] private string moveDownBinding = "<Keyboard>/s";
@@ -104,6 +111,10 @@ public class PlayerController : MonoBehaviour
     private float dashHoldTimer;
     private bool dashPressActive;
     private Coroutine dashCoroutine;
+    private readonly List<Collider2D> enemyBodyColliders = new List<Collider2D>();
+    private bool dashPassThrough;
+    private bool slamPassThrough;
+    private bool invulnerabilityPassThrough;
 
     // ==================================================================
     // Unity messages
@@ -114,6 +125,17 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
         OriginalGravity = rb.gravityScale;
+
+        // Cache scene enemy body colliders. They remain solid for normal movement,
+        // but are ignored temporarily during dash and Eagle Purge.
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        Collider2D[] sceneColliders = FindObjectsByType<Collider2D>(FindObjectsSortMode.None);
+        foreach (Collider2D other in sceneColliders)
+        {
+            if (enemyLayer < 0 || other == col || other.gameObject.layer != enemyLayer || other.attachedRigidbody == rb)
+                continue;
+            enemyBodyColliders.Add(other);
+        }
 
         // Build Input Actions in code so there is no asset to author.
         moveAction = new InputAction("Move", InputActionType.Value, expectedControlType: "Vector2");
@@ -192,6 +214,9 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate: physics only.
     private void FixedUpdate()
     {
+        if (dashPassThrough || slamPassThrough || invulnerabilityPassThrough)
+            RefreshEnemyCollisionIgnores();
+
         // Ground check — overlap box at the feet.
         IsGrounded = Physics2D.OverlapBox(
             (Vector2)transform.position + groundCheckOffset,
@@ -218,7 +243,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             float speed = IsRunHeld ? runSpeed : walkSpeed;
-            xVel = MoveInput.x * speed;
+            xVel = MoveInput.x * speed * currentSpeedMultiplier;
         }
         rb.linearVelocity = new Vector2(xVel, rb.linearVelocity.y);
 
@@ -242,7 +267,8 @@ public class PlayerController : MonoBehaviour
         bool bufferOk = (Time.time - lastJumpPressedTime) <= jumpBufferTime;
         if (coyoteOk && bufferOk)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            float jf = slowAffectsJump ? jumpForce * currentSpeedMultiplier : jumpForce;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jf);
             lastJumpPressedTime = -999f;
             lastGroundedTime = -999f;
         }
@@ -280,18 +306,20 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DashRoutine()
     {
         IsDashing = true;
+        SetDashEnemyPassThrough(true);
         dashCooldownTimer = dashCooldown;
         if (!IsGrounded) CanAirDash = false;
 
         float savedGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.linearVelocity = new Vector2(FacingDirection * dashSpeed, 0f);
+        rb.linearVelocity = new Vector2(FacingDirection * dashSpeed * currentSpeedMultiplier, 0f);
 
         yield return new WaitForSeconds(dashDuration);
 
         rb.gravityScale = savedGravity;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x * 0.4f, rb.linearVelocity.y);
         IsDashing = false;
+        SetDashEnemyPassThrough(false);
         dashCoroutine = null;
     }
 
@@ -307,6 +335,53 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = OriginalGravity;
             IsDashing = false;
         }
+        SetDashEnemyPassThrough(false);
+    }
+
+    public void SetDashEnemyPassThrough(bool enabled)
+    {
+        dashPassThrough = enabled;
+        RefreshEnemyCollisionIgnores();
+    }
+
+    public void SetSlamEnemyPassThrough(bool enabled)
+    {
+        slamPassThrough = enabled;
+        RefreshEnemyCollisionIgnores();
+    }
+
+    public void SetInvulnerabilityEnemyPassThrough(bool enabled)
+    {
+        invulnerabilityPassThrough = enabled;
+        RefreshEnemyCollisionIgnores();
+    }
+
+    private void RefreshEnemyCollisionIgnores()
+    {
+        bool ignoreEnemyBodies = dashPassThrough || slamPassThrough || invulnerabilityPassThrough;
+
+        if (ignoreEnemyBodies)
+        {
+            int enemyLayer = LayerMask.NameToLayer("Enemy");
+            Collider2D[] sceneColliders = FindObjectsByType<Collider2D>(FindObjectsSortMode.None);
+            foreach (Collider2D other in sceneColliders)
+            {
+                if (enemyLayer < 0 || other == col || other.gameObject.layer != enemyLayer || other.attachedRigidbody == rb)
+                    continue;
+
+                if (!enemyBodyColliders.Contains(other))
+                    enemyBodyColliders.Add(other);
+                Physics2D.IgnoreCollision(col, other, true);
+            }
+            return;
+        }
+
+        foreach (Collider2D enemyCollider in enemyBodyColliders)
+        {
+            if (enemyCollider != null && col != null)
+                Physics2D.IgnoreCollision(col, enemyCollider, false);
+        }
+        enemyBodyColliders.RemoveAll(enemyCollider => enemyCollider == null);
     }
 
     // ==================================================================
@@ -332,6 +407,47 @@ public class PlayerController : MonoBehaviour
         InterruptDash();
         var combat = GetComponent<PlayerCombat>();
         if (combat != null) combat.InterruptAll();
+    }
+
+    // ==================================================================
+    // Slow (applied by enemy projectiles)
+    // ==================================================================
+    public bool IsSlowed => currentSpeedMultiplier < 1f;
+
+    private Coroutine slowCoroutine;
+
+    // Re-applying a slow refreshes the duration; it does not stack multiplicatively.
+    // Ignored while transformed. Call ClearSlow externally on death or respawn.
+    public void ApplySlow(float multiplier, float duration, bool affectsJump)
+    {
+        if (IsTransformed) return;
+        if (duration <= 0f) return;
+        if (slowCoroutine != null) StopCoroutine(slowCoroutine);
+        slowCoroutine = StartCoroutine(SlowRoutine(Mathf.Clamp01(multiplier), duration, affectsJump));
+    }
+
+    public void ClearSlow()
+    {
+        if (slowCoroutine != null) { StopCoroutine(slowCoroutine); slowCoroutine = null; }
+        currentSpeedMultiplier = 1f;
+        slowAffectsJump = false;
+    }
+
+    private IEnumerator SlowRoutine(float multiplier, float duration, bool affectsJump)
+    {
+        currentSpeedMultiplier = multiplier;
+        slowAffectsJump = affectsJump;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            // Transforming mid-slow immediately clears it.
+            if (IsTransformed) break;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        currentSpeedMultiplier = 1f;
+        slowAffectsJump = false;
+        slowCoroutine = null;
     }
 
     // ==================================================================
