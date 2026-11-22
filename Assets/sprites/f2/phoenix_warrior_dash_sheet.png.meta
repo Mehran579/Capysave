@@ -199,6 +199,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -206,12 +219,12 @@ TextureImporter:
       name: phoenix_warrior_dash_sheet_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 0
         y: 0
-        width: 124
-        height: 147
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +241,12 @@ TextureImporter:
       name: phoenix_warrior_dash_sheet_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 107
-        width: 13
-        height: 22
+        x: 240
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,12 +263,12 @@ TextureImporter:
       name: phoenix_warrior_dash_sheet_2
       rect:
         serializedVersion: 2
-        x: 277
+        x: 480
         y: 0
-        width: 138
-        height: 150
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,12 +285,12 @@ TextureImporter:
       name: phoenix_warrior_dash_sheet_3
       rect:
         serializedVersion: 2
-        x: 411
-        y: 110
-        width: 14
-        height: 22
+        x: 720
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +307,12 @@ TextureImporter:
       name: phoenix_warrior_dash_sheet_4
       rect:
         serializedVersion: 2
-        x: 502
-        y: 100
-        width: 15
-        height: 19
+        x: 960
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -316,12 +329,12 @@ TextureImporter:
       name: phoenix_warrior_dash_sheet_5
       rect:
         serializedVersion: 2
-        x: 513
+        x: 1200
         y: 0
-        width: 148
-        height: 153
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,561 +347,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 113
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3349773302b1270d0800000000000000
-      internalID: -3426646541359147981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_7
-      rect:
-        serializedVersion: 2
-        x: 746
-        y: 104
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c8ee3e1a4c8fe4a0800000000000000
-      internalID: -6561871882092615485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 757
-        y: 0
-        width: 144
-        height: 154
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9cc8dc33d813aefc0800000000000000
-      internalID: -3464902480778916663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_9
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 115
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c82af88a0f7047f0800000000000000
-      internalID: -630364264607373112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 101
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d9af1ddfcf24d900800000000000000
-      internalID: 708243611218586072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 1001
-        y: 0
-        width: 129
-        height: 152
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72a9d2b0d106cc440800000000000000
-      internalID: 4957442967685929511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1126
-        y: 113
-        width: 13
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fcb0853cdb3095e00800000000000000
-      internalID: 1033861703019269071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 1238
-        y: 106
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75489753d654c1400800000000000000
-      internalID: 296188010850518103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_14
-      rect:
-        serializedVersion: 2
-        x: 1241
-        y: 0
-        width: 122
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b933eafad4e18840800000000000000
-      internalID: 5224708671889684912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_15
-      rect:
-        serializedVersion: 2
-        x: 1357
-        y: 118
-        width: 12
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a479f868831632c00800000000000000
-      internalID: 874649648043628362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_16
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 94
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: edfaff39263a70310800000000000000
-      internalID: 1371244255342735326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_17
-      rect:
-        serializedVersion: 2
-        x: 268
-        y: 96
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb6ea0b4d7eb30a40800000000000000
-      internalID: 5333315829075994299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_18
-      rect:
-        serializedVersion: 2
-        x: 503
-        y: 73
-        width: 28
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf13e406f38249bc0800000000000000
-      internalID: -3777349934793215492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_19
-      rect:
-        serializedVersion: 2
-        x: 747
-        y: 76
-        width: 27
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b23f104629ee8490800000000000000
-      internalID: -7741994358909488461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_20
-      rect:
-        serializedVersion: 2
-        x: 1119
-        y: 77
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 50989344681e61ac0800000000000000
-      internalID: -3884669661773985531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_21
-      rect:
-        serializedVersion: 2
-        x: 1357
-        y: 82
-        width: 12
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2467f7b5eed151de0800000000000000
-      internalID: -1363150402635205054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_22
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 72
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e7be6daeb57780f0800000000000000
-      internalID: -1114792920936957983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_23
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 70
-        width: 25
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4645bcc22d3002a0800000000000000
-      internalID: -6773346619892611510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_24
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 74
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: afeb1636aec4cbe50800000000000000
-      internalID: 6826415704760237818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_25
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 34
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b4a2f62da0a1ffa0800000000000000
-      internalID: -5768652982141672267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_26
-      rect:
-        serializedVersion: 2
-        x: 257
-        y: 36
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2f30f885e775da90800000000000000
-      internalID: -7289788594100617427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_27
-      rect:
-        serializedVersion: 2
-        x: 487
-        y: 40
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 796e2b1626d99df30800000000000000
-      internalID: 4600881540207142551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_28
-      rect:
-        serializedVersion: 2
-        x: 731
-        y: 44
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94e3331498fe6b7c0800000000000000
-      internalID: -4055791041617117623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_29
-      rect:
-        serializedVersion: 2
-        x: 987
-        y: 41
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12c56ff39ec4b8530800000000000000
-      internalID: 3858262070457162785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_dash_sheet_30
-      rect:
-        serializedVersion: 2
-        x: 1237
-        y: 46
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 25e5e8e0ccf900d60800000000000000
-      internalID: 7854453448900501074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d774876c976f3bf4ca80e3fabf26310d
     internalID: 0
     vertices: []
     indices: 
@@ -896,39 +359,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":240.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       phoenix_warrior_dash_sheet_0: -1890113331324035990
       phoenix_warrior_dash_sheet_1: 1453332812080030240
-      phoenix_warrior_dash_sheet_10: 708243611218586072
-      phoenix_warrior_dash_sheet_11: 4957442967685929511
-      phoenix_warrior_dash_sheet_12: 1033861703019269071
-      phoenix_warrior_dash_sheet_13: 296188010850518103
-      phoenix_warrior_dash_sheet_14: 5224708671889684912
-      phoenix_warrior_dash_sheet_15: 874649648043628362
-      phoenix_warrior_dash_sheet_16: 1371244255342735326
-      phoenix_warrior_dash_sheet_17: 5333315829075994299
-      phoenix_warrior_dash_sheet_18: -3777349934793215492
-      phoenix_warrior_dash_sheet_19: -7741994358909488461
       phoenix_warrior_dash_sheet_2: -1776644718576497896
-      phoenix_warrior_dash_sheet_20: -3884669661773985531
-      phoenix_warrior_dash_sheet_21: -1363150402635205054
-      phoenix_warrior_dash_sheet_22: -1114792920936957983
-      phoenix_warrior_dash_sheet_23: -6773346619892611510
-      phoenix_warrior_dash_sheet_24: 6826415704760237818
-      phoenix_warrior_dash_sheet_25: -5768652982141672267
-      phoenix_warrior_dash_sheet_26: -7289788594100617427
-      phoenix_warrior_dash_sheet_27: 4600881540207142551
-      phoenix_warrior_dash_sheet_28: -4055791041617117623
-      phoenix_warrior_dash_sheet_29: 3858262070457162785
       phoenix_warrior_dash_sheet_3: 1409821122893043179
-      phoenix_warrior_dash_sheet_30: 7854453448900501074
       phoenix_warrior_dash_sheet_4: -982121147320738085
       phoenix_warrior_dash_sheet_5: -7420760846136497456
-      phoenix_warrior_dash_sheet_6: -3426646541359147981
-      phoenix_warrior_dash_sheet_7: -6561871882092615485
-      phoenix_warrior_dash_sheet_8: -3464902480778916663
-      phoenix_warrior_dash_sheet_9: -630364264607373112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

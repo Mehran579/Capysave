@@ -130,6 +130,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -137,12 +150,12 @@ TextureImporter:
       name: raven_fly_left_sheet_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 52
-        width: 199
-        height: 244
+        x: 0
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +172,12 @@ TextureImporter:
       name: raven_fly_left_sheet_1
       rect:
         serializedVersion: 2
-        x: 224
-        y: 55
-        width: 199
-        height: 244
+        x: 211
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +194,12 @@ TextureImporter:
       name: raven_fly_left_sheet_2
       rect:
         serializedVersion: 2
-        x: 427
-        y: 56
-        width: 207
-        height: 202
+        x: 422
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +216,12 @@ TextureImporter:
       name: raven_fly_left_sheet_3
       rect:
         serializedVersion: 2
-        x: 632
-        y: 31
-        width: 213
-        height: 163
+        x: 633
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +238,12 @@ TextureImporter:
       name: raven_fly_left_sheet_4
       rect:
         serializedVersion: 2
-        x: 857
+        x: 844
         y: 0
-        width: 198
-        height: 191
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +260,12 @@ TextureImporter:
       name: raven_fly_left_sheet_5
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 15
-        width: 197
-        height: 173
+        x: 1055
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +282,12 @@ TextureImporter:
       name: raven_fly_left_sheet_6
       rect:
         serializedVersion: 2
-        x: 1265
-        y: 48
-        width: 212
-        height: 162
+        x: 1266
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +304,12 @@ TextureImporter:
       name: raven_fly_left_sheet_7
       rect:
         serializedVersion: 2
-        x: 1483
-        y: 49
-        width: 205
-        height: 224
+        x: 1477
+        y: 0
+        width: 211
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 54a6df760fe81cd4dba943bb9797a69a
     internalID: 0
     vertices: []
     indices: 
@@ -321,7 +334,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":211.0,"y":299.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       raven_fly_left_sheet_0: -8751724691111846442
       raven_fly_left_sheet_1: 3071828535466784761

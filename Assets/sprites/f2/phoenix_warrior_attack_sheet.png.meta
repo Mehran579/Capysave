@@ -208,6 +208,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -215,12 +228,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 99
-        width: 15
-        height: 19
+        x: 0
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +250,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 240
         y: 0
-        width: 124
-        height: 152
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +272,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_2
       rect:
         serializedVersion: 2
-        x: 153
-        y: 112
-        width: 13
-        height: 22
+        x: 480
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +294,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_3
       rect:
         serializedVersion: 2
-        x: 272
+        x: 720
         y: 0
-        width: 127
-        height: 149
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +316,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_4
       rect:
         serializedVersion: 2
-        x: 388
-        y: 108
-        width: 14
-        height: 23
+        x: 960
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +338,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_5
       rect:
         serializedVersion: 2
-        x: 517
-        y: 105
-        width: 14
-        height: 19
+        x: 1200
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +360,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_6
       rect:
         serializedVersion: 2
-        x: 523
+        x: 1440
         y: 0
-        width: 130
-        height: 155
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +382,12 @@ TextureImporter:
       name: phoenix_warrior_attack_sheet_7
       rect:
         serializedVersion: 2
-        x: 644
-        y: 116
-        width: 13
-        height: 22
+        x: 1680
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,583 +400,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 754
-        y: 110
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 314344a95bbab01a0800000000000000
-      internalID: -6842186412393745389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_9
-      rect:
-        serializedVersion: 2
-        x: 762
-        y: 0
-        width: 143
-        height: 159
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e525f7224465ab10800000000000000
-      internalID: 1992108645482309097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 991
-        y: 111
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55066d0b3b43091e0800000000000000
-      internalID: -2193195072158801835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 148
-        height: 159
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7fe075f548ee5ef20800000000000000
-      internalID: 3451426941751987959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1234
-        y: 106
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ee1bcc38968372b0800000000000000
-      internalID: -5587974724223557913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 1240
-        y: 0
-        width: 133
-        height: 156
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 789fba3f17303e0c0800000000000000
-      internalID: -4547787410759747193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_14
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 117
-        width: 13
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3374677410104e920800000000000000
-      internalID: 3018538755250603827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_15
-      rect:
-        serializedVersion: 2
-        x: 1477
-        y: 103
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1f8f12e50e9732d0800000000000000
-      internalID: -3298994453919854821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_16
-      rect:
-        serializedVersion: 2
-        x: 1481
-        y: 0
-        width: 124
-        height: 154
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a65238b402e0cac80800000000000000
-      internalID: -8310251680536779414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_17
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 115
-        width: 12
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3be8a2299729e8f0800000000000000
-      internalID: -510833544064865476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_18
-      rect:
-        serializedVersion: 2
-        x: 1718
-        y: 106
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9046e51a06d3d1b50800000000000000
-      internalID: 6565471317009523721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_19
-      rect:
-        serializedVersion: 2
-        x: 1721
-        y: 0
-        width: 122
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2fdf5f8831db1a300800000000000000
-      internalID: 261698144964050418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_20
-      rect:
-        serializedVersion: 2
-        x: 1837
-        y: 118
-        width: 12
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e77d5340114abceb0800000000000000
-      internalID: -4698481393238943874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_21
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 77
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9264cb13dca29fda0800000000000000
-      internalID: -5910645975155980759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_22
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 94
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ccfb540dae7d9530800000000000000
-      internalID: 3863383336921332932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_23
-      rect:
-        serializedVersion: 2
-        x: 758
-        y: 82
-        width: 23
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f0b56d5ec2229130800000000000000
-      internalID: 3571955724183777526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_24
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 82
-        width: 24
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7789f4744ffe94b00800000000000000
-      internalID: 813445040164542583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_25
-      rect:
-        serializedVersion: 2
-        x: 1598
-        y: 79
-        width: 12
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 11204a2dcd3517380800000000000000
-      internalID: -8975300374480813551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_26
-      rect:
-        serializedVersion: 2
-        x: 1837
-        y: 82
-        width: 12
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34be300a660177290800000000000000
-      internalID: -7892821788986184893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_27
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 73
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c1c946fc99c844b0800000000000000
-      internalID: -5455889272575245887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_28
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 45
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62d941e9525df0e50800000000000000
-      internalID: 6777870321758543142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_29
-      rect:
-        serializedVersion: 2
-        x: 743
-        y: 50
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57daa135ed6de0ea0800000000000000
-      internalID: -5904545811070800523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_30
-      rect:
-        serializedVersion: 2
-        x: 980
-        y: 51
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67065223114fd26b0800000000000000
-      internalID: -5319327230161756042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_31
-      rect:
-        serializedVersion: 2
-        x: 1228
-        y: 46
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68c109740fed9da60800000000000000
-      internalID: 7699430161540717702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_32
-      rect:
-        serializedVersion: 2
-        x: 1474
-        y: 43
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d15811a83f9a0b240800000000000000
-      internalID: 4805527665862870301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_attack_sheet_33
-      rect:
-        serializedVersion: 2
-        x: 1717
-        y: 46
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a9167563eecd498d0800000000000000
-      internalID: -2840402549291916902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a92c7ba9c524f694096913e303fb9235
     internalID: 0
     vertices: []
     indices: 
@@ -971,42 +412,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":240.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       phoenix_warrior_attack_sheet_0: -5419588965001606412
       phoenix_warrior_attack_sheet_1: 4005291073557575133
-      phoenix_warrior_attack_sheet_10: -2193195072158801835
-      phoenix_warrior_attack_sheet_11: 3451426941751987959
-      phoenix_warrior_attack_sheet_12: -5587974724223557913
-      phoenix_warrior_attack_sheet_13: -4547787410759747193
-      phoenix_warrior_attack_sheet_14: 3018538755250603827
-      phoenix_warrior_attack_sheet_15: -3298994453919854821
-      phoenix_warrior_attack_sheet_16: -8310251680536779414
-      phoenix_warrior_attack_sheet_17: -510833544064865476
-      phoenix_warrior_attack_sheet_18: 6565471317009523721
-      phoenix_warrior_attack_sheet_19: 261698144964050418
       phoenix_warrior_attack_sheet_2: -1422612534745174917
-      phoenix_warrior_attack_sheet_20: -4698481393238943874
-      phoenix_warrior_attack_sheet_21: -5910645975155980759
-      phoenix_warrior_attack_sheet_22: 3863383336921332932
-      phoenix_warrior_attack_sheet_23: 3571955724183777526
-      phoenix_warrior_attack_sheet_24: 813445040164542583
-      phoenix_warrior_attack_sheet_25: -8975300374480813551
-      phoenix_warrior_attack_sheet_26: -7892821788986184893
-      phoenix_warrior_attack_sheet_27: -5455889272575245887
-      phoenix_warrior_attack_sheet_28: 6777870321758543142
-      phoenix_warrior_attack_sheet_29: -5904545811070800523
       phoenix_warrior_attack_sheet_3: -4928965299270780371
-      phoenix_warrior_attack_sheet_30: -5319327230161756042
-      phoenix_warrior_attack_sheet_31: 7699430161540717702
-      phoenix_warrior_attack_sheet_32: 4805527665862870301
-      phoenix_warrior_attack_sheet_33: -2840402549291916902
       phoenix_warrior_attack_sheet_4: 5398530906665764701
       phoenix_warrior_attack_sheet_5: 496116228198374661
       phoenix_warrior_attack_sheet_6: -5416528132219067338
       phoenix_warrior_attack_sheet_7: 7980761199890912470
-      phoenix_warrior_attack_sheet_8: -6842186412393745389
-      phoenix_warrior_attack_sheet_9: 1992108645482309097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

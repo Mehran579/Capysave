@@ -226,6 +226,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -233,12 +246,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_0
       rect:
         serializedVersion: 2
-        x: 279
+        x: 0
         y: 0
-        width: 123
-        height: 159
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +268,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_1
       rect:
         serializedVersion: 2
-        x: 521
-        y: 10
-        width: 122
-        height: 152
+        x: 240
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +290,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_2
       rect:
         serializedVersion: 2
-        x: 637
-        y: 124
-        width: 12
-        height: 22
+        x: 480
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +312,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_3
       rect:
         serializedVersion: 2
-        x: 755
-        y: 23
-        width: 126
-        height: 141
+        x: 720
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +334,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_4
       rect:
         serializedVersion: 2
-        x: 871
-        y: 127
-        width: 14
-        height: 22
+        x: 960
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +356,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_5
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 143
-        width: 13
-        height: 21
+        x: 1200
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +378,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_6
       rect:
         serializedVersion: 2
-        x: 1027
-        y: 9
-        width: 130
-        height: 172
+        x: 1440
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +400,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_7
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 14
-        width: 167
-        height: 173
+        x: 1680
+        y: 0
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -409,12 +422,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_8
       rect:
         serializedVersion: 2
-        x: 1493
+        x: 1920
         y: 0
-        width: 166
-        height: 167
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -431,12 +444,12 @@ TextureImporter:
       name: phoenix_warrior_slam_sheet_9
       rect:
         serializedVersion: 2
-        x: 1742
+        x: 2160
         y: 0
-        width: 147
-        height: 159
+        width: 240
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,671 +462,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 1965
-        y: 0
-        width: 121
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d57b4a40e86325760800000000000000
-      internalID: 7445073117588010845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 2201
-        y: 0
-        width: 122
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b643ef8816a77a9b0800000000000000
-      internalID: -5068948296253426581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 0
-        width: 124
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1585ac45035cad380800000000000000
-      internalID: -8945620898446419887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 100
-        width: 13
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5513f4054d8ab16f0800000000000000
-      internalID: -712790486174191275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_14
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 103
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30d17a20722f17ac0800000000000000
-      internalID: -3859037156317651709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_15
-      rect:
-        serializedVersion: 2
-        x: 395
-        y: 118
-        width: 12
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f43be32050ef3c90800000000000000
-      internalID: -7187779845455399688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_16
-      rect:
-        serializedVersion: 2
-        x: 518
-        y: 113
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96a580ac922bbd2b0800000000000000
-      internalID: -5558653422505797015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_17
-      rect:
-        serializedVersion: 2
-        x: 753
-        y: 119
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d757514fc8cbc4a60800000000000000
-      internalID: 7659704379826861437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_18
-      rect:
-        serializedVersion: 2
-        x: 1021
-        y: 109
-        width: 19
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77bc31d9429945380800000000000000
-      internalID: -8983386974164104329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_19
-      rect:
-        serializedVersion: 2
-        x: 1143
-        y: 103
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5f2211534302b120800000000000000
-      internalID: 2428006736763957087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_20
-      rect:
-        serializedVersion: 2
-        x: 1248
-        y: 117
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a32db4c05a861c1c0800000000000000
-      internalID: -4485188695799115206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_21
-      rect:
-        serializedVersion: 2
-        x: 2080
-        y: 106
-        width: 13
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31c8afdc7a851c4c0800000000000000
-      internalID: -4269033494031987693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_22
-      rect:
-        serializedVersion: 2
-        x: 2198
-        y: 106
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06d5010f871c5d250800000000000000
-      internalID: 5968889606317301088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_23
-      rect:
-        serializedVersion: 2
-        x: 2317
-        y: 118
-        width: 12
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98227cb4359226260800000000000000
-      internalID: 7089274201164948105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_24
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 86
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 413a12004e2866f40800000000000000
-      internalID: 5721404292387152660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_25
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 83
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6f95d5693f028c80800000000000000
-      internalID: -8322072422231203990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_26
-      rect:
-        serializedVersion: 2
-        x: 637
-        y: 87
-        width: 12
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77c95c6b91f636db0800000000000000
-      internalID: -4799870621615547273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_27
-      rect:
-        serializedVersion: 2
-        x: 875
-        y: 90
-        width: 12
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d579b045e5106d7c0800000000000000
-      internalID: -4047045710497212579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_28
-      rect:
-        serializedVersion: 2
-        x: 996
-        y: 90
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b2f0f1c0323e73e0800000000000000
-      internalID: -2054149195040755021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_29
-      rect:
-        serializedVersion: 2
-        x: 1487
-        y: 98
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc5b4ba577f745300800000000000000
-      internalID: 239956830757107151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_30
-      rect:
-        serializedVersion: 2
-        x: 1961
-        y: 93
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bf45b5957eb96f40800000000000000
-      internalID: 5722314213783064503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_31
-      rect:
-        serializedVersion: 2
-        x: 2317
-        y: 82
-        width: 12
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe15a451cdcfea610800000000000000
-      internalID: 1634521736962265583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_32
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 65
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e2807af6c0274710800000000000000
-      internalID: 1677345425196090089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_33
-      rect:
-        serializedVersion: 2
-        x: 1717
-        y: 80
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4797304903c80ba20800000000000000
-      internalID: 3076112685763623284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_34
-      rect:
-        serializedVersion: 2
-        x: 2078
-        y: 71
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9ca16355aa43c720800000000000000
-      internalID: 2865215861866736796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_35
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 43
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bdb86bdbc2f44e150800000000000000
-      internalID: 5900928465342204891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_36
-      rect:
-        serializedVersion: 2
-        x: 517
-        y: 53
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1557cabc83c1dd150800000000000000
-      internalID: 5898902117186041169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_37
-      rect:
-        serializedVersion: 2
-        x: 2197
-        y: 46
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02fa0bbdf3badde00800000000000000
-      internalID: 1071200577141124896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_38
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 26
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95c76fd1eb8d365f0800000000000000
-      internalID: -764529200664773543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phoenix_warrior_slam_sheet_39
-      rect:
-        serializedVersion: 2
-        x: 1957
-        y: 33
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89334a5e3e244ba50800000000000000
-      internalID: 6535922505799185304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 02e3442ec1a169a488a1d345ccfb2a3c
     internalID: 0
     vertices: []
     indices: 
@@ -1121,42 +474,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":240.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       phoenix_warrior_slam_sheet_0: -8468190394979915227
       phoenix_warrior_slam_sheet_1: 5956074412950305935
-      phoenix_warrior_slam_sheet_10: 7445073117588010845
-      phoenix_warrior_slam_sheet_11: -5068948296253426581
-      phoenix_warrior_slam_sheet_12: -8945620898446419887
-      phoenix_warrior_slam_sheet_13: -712790486174191275
-      phoenix_warrior_slam_sheet_14: -3859037156317651709
-      phoenix_warrior_slam_sheet_15: -7187779845455399688
-      phoenix_warrior_slam_sheet_16: -5558653422505797015
-      phoenix_warrior_slam_sheet_17: 7659704379826861437
-      phoenix_warrior_slam_sheet_18: -8983386974164104329
-      phoenix_warrior_slam_sheet_19: 2428006736763957087
       phoenix_warrior_slam_sheet_2: 3625422353833709241
-      phoenix_warrior_slam_sheet_20: -4485188695799115206
-      phoenix_warrior_slam_sheet_21: -4269033494031987693
-      phoenix_warrior_slam_sheet_22: 5968889606317301088
-      phoenix_warrior_slam_sheet_23: 7089274201164948105
-      phoenix_warrior_slam_sheet_24: 5721404292387152660
-      phoenix_warrior_slam_sheet_25: -8322072422231203990
-      phoenix_warrior_slam_sheet_26: -4799870621615547273
-      phoenix_warrior_slam_sheet_27: -4047045710497212579
-      phoenix_warrior_slam_sheet_28: -2054149195040755021
-      phoenix_warrior_slam_sheet_29: 239956830757107151
       phoenix_warrior_slam_sheet_3: -8123846052996114735
-      phoenix_warrior_slam_sheet_30: 5722314213783064503
-      phoenix_warrior_slam_sheet_31: 1634521736962265583
-      phoenix_warrior_slam_sheet_32: 1677345425196090089
-      phoenix_warrior_slam_sheet_33: 3076112685763623284
-      phoenix_warrior_slam_sheet_34: 2865215861866736796
-      phoenix_warrior_slam_sheet_35: 5900928465342204891
-      phoenix_warrior_slam_sheet_36: 5898902117186041169
-      phoenix_warrior_slam_sheet_37: 1071200577141124896
-      phoenix_warrior_slam_sheet_38: -764529200664773543
-      phoenix_warrior_slam_sheet_39: 6535922505799185304
       phoenix_warrior_slam_sheet_4: 9072424134141781375
       phoenix_warrior_slam_sheet_5: 6440255678344834102
       phoenix_warrior_slam_sheet_6: 3528735499077175008
