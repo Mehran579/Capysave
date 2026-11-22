@@ -3,6 +3,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerController))]
 public class PlayerHealth : MonoBehaviour, IDamageable
@@ -104,5 +105,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         sr.color = baseColor;
         IsInvulnerable = false;
         iFrameCoroutine = null;
+    }
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
